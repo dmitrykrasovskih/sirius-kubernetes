@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: integrations-worker
+    environment: Development
+  name: integrations-worker
+  namespace: sirius
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: integrations-worker
+  sessionAffinity: None
+  type: ClusterIP

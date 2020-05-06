@@ -1,0 +1,17 @@
+{
+  "SeqUrl": "http://seq.common.svc.cluster.local",
+  "Serilog": {
+    "minimumLevel": {
+      "default": "Information",
+      "override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  },
+  "disableConsoleLogOutput": false,
+  "ElasticsearchLogs": {
+    "NodeUrls": [ "http://elk.monitoring.svc.cluster.local:9200" ],
+    "IndexPrefixName": "logs"
+  }
+}

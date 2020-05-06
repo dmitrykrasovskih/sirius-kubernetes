@@ -1,0 +1,13 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-BitcoinTest-NodeUser}",
+    "Password": "${SiriusIntegrations-BitcoinTest-NodePassword}",
+    "Url": "${SiriusIntegrations-BitcoinTest-NodeUrl}"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-testnet",
+    "Name": "Bitcoin test network",
+    "NetworkType": "Test",
+    "IntegrationUrl": "http://bitcoin-test.sirius-integrations.svc.cluster.local"
+  }
+}
