@@ -1,0 +1,4 @@
+{
+  "SignFacadeUrl": "${SiriusBilSignFacadeUrl}",
+  "SignFacadeApiKey": "${SiriusBilSignFacadeApiKey}",
+}

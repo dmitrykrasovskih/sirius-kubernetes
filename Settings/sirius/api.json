@@ -1,0 +1,8 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-Api-DbConnectionString}"
+  },
+  "Auth": {
+    "JwtSecret": "${JwtTokenSecret}"
+  }
+}
