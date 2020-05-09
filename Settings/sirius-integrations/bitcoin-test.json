@@ -6,8 +6,7 @@
   },
   "Blockchain": {
     "Id": "bitcoin-testnet",
-    "Name": "Bitcoin test network",
-    "NetworkType": "Test",
-    "IntegrationUrl": "http://bitcoin-test.sirius-integrations.svc.cluster.local"
+    "Name": "Bitcoin testnet",
+    "NetworkType": "Test"
   }
 }

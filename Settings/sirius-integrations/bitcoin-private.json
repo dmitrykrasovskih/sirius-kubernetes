@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-BitcoinPrivate-NodeUser}",
+    "Password": "${SiriusIntegrations-BitcoinPrivate-NodePassword}",
+    "Url": "${SiriusIntegrations-BitcoinPrivate-NodeUrl}"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-regtest",
+    "Name": "Bitcoin regtest",
+    "NetworkType": "Private"
+  }
+}
