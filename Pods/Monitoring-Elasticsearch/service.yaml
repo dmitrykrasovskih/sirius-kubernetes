@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch-proxy
+    environment: Production
+  #name: elasticsearch
+  name: elasticsearch
+  namespace: sirius-monitoring
+spec:
+  ports:
+  - name: tcp
+    port: 9200
+    protocol: TCP
+    targetPort: 9200
+  - name: probe
+    port: 81
+    protocol: TCP
+    targetPort: 81
+  selector:
+    app: elasticsearch-proxy
+  sessionAffinity: None
+  type: ClusterIP
