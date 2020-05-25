@@ -63,7 +63,7 @@ data:
 
     server {
       listen 9200;
-      proxy_pass elasticsearch.monitoring-elk;
+      proxy_pass elasticsearch.monitoring-elk:9200;
     }
 
 kind: ConfigMap
