@@ -5,12 +5,9 @@
   "Executor": {
     "Url": "http://executor.sirius.svc.cluster.local/"
   },
-  "Indexer": {
-    "Url": "http://indexer.sirius.svc.cluster.local/"
-  },
   "VaultAgent": {
     "Url": "http://vault-agent.sirius.svc.cluster.local/"
-  },  
+  },
   "RabbitMq": {
     "HostUrl": "rabbit.sirius.svc.cluster.local",
     "Username": "${Sirius-Rabbit-User}",

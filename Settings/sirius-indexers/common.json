@@ -1,0 +1,9 @@
+{
+  "Serilog": {
+    "minimumLevel": {
+      "override": {
+        "MassTransit": "Information"
+      }
+    }
+  }
+}

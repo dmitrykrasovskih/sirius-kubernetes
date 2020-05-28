@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-BitcoinMain-NodeUser}",
+    "Password": "${SiriusIntegrations-BitcoinMain-NodePassword}",
+    "Url": "${SiriusIntegrations-BitcoinMain-NodeUrl}"
+  },
+  "Blockchain": {
+    "Id": "bitcoin",
+    "Name": "Bitcoin mainnet",
+    "NetworkType": "Public"
+  }
+}

@@ -1,4 +1,5 @@
 {
-  "SignFacadeUrl": "${SiriusBilSignFacadeUrl}",
-  "SignFacadeApiKey": "${SiriusBilSignFacadeApiKey}",
+  "Db": {
+    "ConnectionString": "${Sirius-VaultAgent-DbConnectionString}"
+  }
 }

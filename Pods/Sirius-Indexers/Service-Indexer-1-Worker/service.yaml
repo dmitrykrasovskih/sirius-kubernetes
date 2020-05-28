@@ -2,21 +2,17 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: bitcoin
+    app: indexer-1-worker
     environment: Development
-  name: bitcoin
-  namespace: sirius-integrations
+  name: indexer-1-worker
+  namespace: sirius-indexers
 spec:
   ports:
   - name: http
     port: 8080
     protocol: TCP
     targetPort: 5000
-  - name: grpc
-    port: 80
-    protocol: TCP
-    targetPort: 5001
   selector:
-    app: bitcoin
+    app: indexer-1-worker
   sessionAffinity: None
   type: ClusterIP

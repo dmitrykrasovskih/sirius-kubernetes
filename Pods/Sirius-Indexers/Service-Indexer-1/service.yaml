@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: bitcoin-test
+    app: indexer-1
     environment: Development
-  name: bitcoin-test
-  namespace: sirius-integrations
+  name: indexer-1
+  namespace: sirius-indexers
 spec:
   ports:
   - name: http
@@ -17,6 +17,6 @@ spec:
     protocol: TCP
     targetPort: 5001
   selector:
-    app: bitcoin-test
+    app: indexer-1
   sessionAffinity: None
   type: ClusterIP

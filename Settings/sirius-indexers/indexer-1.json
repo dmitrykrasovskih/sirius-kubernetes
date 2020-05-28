@@ -1,0 +1,24 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+  },
+  "Indexing": {
+    "Blockchains": {
+      "bitcoin-swisschain-private": {
+        "FirstPassIndexersCount": 10,
+        "LastHistoricalBlockNumber": 151123,
+        "DelayOnBlockNotFound": "00:00:10"
+      },
+      "bitcoin-test": {
+        "FirstPassIndexersCount": 10,
+        "LastHistoricalBlockNumber": 1746664,
+        "DelayOnBlockNotFound": "00:00:30"
+      },
+      "bitcoin-main": {
+        "FirstPassIndexersCount": 10,
+        "LastHistoricalBlockNumber": 631976,
+        "DelayOnBlockNotFound": "00:00:30"
+      }
+    } 
+  }
+}

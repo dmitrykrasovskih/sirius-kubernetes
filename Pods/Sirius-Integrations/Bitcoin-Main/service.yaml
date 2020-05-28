@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: bitcoin-test
+    app: bitcoin-main
     environment: Development
-  name: bitcoin-test
+  name: bitcoin-main
   namespace: sirius-integrations
 spec:
   ports:
@@ -17,6 +17,6 @@ spec:
     protocol: TCP
     targetPort: 5001
   selector:
-    app: bitcoin-test
+    app: bitcoin-main
   sessionAffinity: None
   type: ClusterIP

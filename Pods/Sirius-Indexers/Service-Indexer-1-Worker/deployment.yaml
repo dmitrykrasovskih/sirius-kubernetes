@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Vault
+    description: indexer-1-worker
   labels:
-    app: vault
+    app: indexer-1-worker
     environment: Development
     tier: Service
-  name: vault
-  namespace: sirius
+  name: indexer-1-worker
+  namespace: sirius-indexers
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vault
+      app: indexer-1-worker
   template:
     metadata:
       labels:
-        app: vault
-      name: vault
+        app: indexer-1-worker
+      name: indexer-1-worker
     spec:
       containers:
-      - name: vault
-        image: docker.io/swisschains/sirius-vault:latest
+      - name: indexer-1-worker
+        image: docker.io/swisschains/sirius-indexer-worker:0.0.5
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,7 +40,6 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
-        - containerPort: 5001
         readinessProbe:
           httpGet:
             path: /api/isalive
@@ -55,17 +54,19 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 64Mi 
-            cpu: 40m 
+            memory: 256Mi 
+            cpu: 1000m 
           limits:
-            memory: 128Mi 
-            cpu: 500m 
+            memory: 1024Mi 
+            cpu: 2000m
         env:
         - name: RemoteSettingsUrls__0 
           value: "http://settings.common.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
+        - name: RemoteSettingsUrls__1
           value: "http://settings.common.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common.svc.cluster.local/sirius/vault"
+          value: "http://settings.common.svc.cluster.local/sirius-indexers/common"
+        - name: RemoteSettingsUrls__3
+          value: "http://settings.common.svc.cluster.local/sirius-indexers/indexer-1"
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirius-indexers
