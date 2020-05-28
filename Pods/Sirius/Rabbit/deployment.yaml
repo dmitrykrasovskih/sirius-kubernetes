@@ -4,7 +4,7 @@ metadata:
   annotations:
   labels:
     app: rabbit
-    environment: dev
+    environment: test
   name: rabbit
   namespace: sirius
 spec:
@@ -30,7 +30,14 @@ spec:
       - env:
         - name: RABBITMQ_DEFAULT_VHOST
           value: /
-        image: rabbitmq:3.6.16-management
+        - name: RABBITMQ_DEFAULT_USER
+          value: user.sirius
+        - name: RABBITMQ_DEFAULT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: rabbit
+              key: RABBITMQ_DEFAULT_PASS
+        image: rabbitmq:3.7.3-management
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
@@ -46,38 +53,28 @@ spec:
           protocol: TCP
         - containerPort: 15672
           protocol: TCP
-        resources: {}
+        resources:
+          requests:
+            memory: "102Mi"
+            cpu: 0.1
+          limits:
+            memory: "512Mi"
+            cpu: 1
         volumeMounts:
         - mountPath: /var/lib/rabbitmq/mnesia
           name: rabbit
-        - mountPath: /etc/rabbitmq/rabbitmq-env.conf
-          name: rabbit-sirius-conf
-          readOnly: true
-          subPath: rabbitmq-env.conf
-        - mountPath: /etc/rabbitmq/definitions.json
-          name: rabbit-sirius-conf
-          readOnly: true
-          subPath: definitions.json
-        - mountPath: /etc/rabbitmq/enabled_plugins
-          name: rabbit-sirius-conf
-          subPath: enabled_plugins
-          readOnly: true
       volumes:
       - name: rabbit
         azureDisk:
           kind: Managed
           diskName: rabbit-sirius
-          diskURI: /subscriptions/86ba7b87-cc6d-4e1a-9c1d-81aa62cd027a/resourceGroups/Kubernetes-ShowRoom-RG/providers/Microsoft.Compute/disks/rabbit-sirius
-      - configMap:
-          defaultMode: 420
-          name: rabbit
-        name: rabbit-sirius-conf
+          diskURI: /subscriptions/791041c4-d3b5-4916-a464-1e3548275a38/resourceGroups/Kubernetes-Test/providers/Microsoft.Compute/disks/rabbit-sirius
       dnsPolicy: ClusterFirst
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-        type: Services
+        agentpool: agentpool
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
