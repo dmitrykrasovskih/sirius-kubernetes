@@ -68,5 +68,8 @@ spec:
           value: "http://settings.common.svc.cluster.local/sirius-indexers/common"
         - name: RemoteSettingsUrls__3
           value: "http://settings.common.svc.cluster.local/sirius-indexers/indexer-1"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
       nodeSelector:
-        agentpool: sirius-indexers
+        agentpool: sirindexers

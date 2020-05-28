@@ -73,6 +73,9 @@ spec:
           name: rabbit
         name: rabbit-sirius-conf
       dnsPolicy: ClusterFirst
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
       nodeSelector:
         type: Services
       restartPolicy: Always

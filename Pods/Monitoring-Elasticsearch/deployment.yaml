@@ -30,6 +30,9 @@ spec:
       #tolerations:
       #- effect: NoSchedule
       #  operator: Exists
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
       nodeSelector:
         agentpool: sirius
       containers:

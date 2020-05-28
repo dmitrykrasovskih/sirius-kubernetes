@@ -67,5 +67,8 @@ spec:
           value: "http://settings.common.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
           value: "http://settings.common.svc.cluster.local/sirius-integrations/bitcoin-swisschain-private"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
       nodeSelector:
-          agentpool: sirius-integrations
+          agentpool: sirintegrat
