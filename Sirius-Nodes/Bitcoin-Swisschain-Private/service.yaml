@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bitcoin-swisschain-private
+    environment: test
+  name: bitcoin-swisschain-private
+  namespace: sirius-nodes
+#  annotations:
+#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 18443
+  selector:
+    app: nginx-proxy-a
+  sessionAffinity: None
+  type: ClusterIP
+#  type: LoadBalancer
