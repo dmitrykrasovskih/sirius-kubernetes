@@ -1,7 +1,7 @@
 {
   "Node": {
-    "User": "${SiriusIntegrations-BitcoinSwisschainPrivate-NodeUser}",
-    "Password": "${SiriusIntegrations-BitcoinSwisschainPrivate-NodePassword}",
+    "User": "${SiriusIntegrations-Bitcoin-SwisschainPrivate-NodeUser}",
+    "Password": "${SiriusIntegrations-Bitcoin-SwisschainPrivate-NodePassword}",
     "Url": "http://bitcoin-swisschain-private.sirius-nodes.svc.cluster.local"
   },
   "Blockchain": {

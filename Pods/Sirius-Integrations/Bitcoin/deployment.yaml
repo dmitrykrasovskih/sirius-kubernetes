@@ -4,10 +4,10 @@ metadata:
   annotations:
     description: Bitcoin MainNet
   labels:
-    app: bitcoin-main
+    app: bitcoin
     environment: Development
     tier: Service
-  name: bitcoin-main
+  name: bitcoin
   namespace: sirius-integrations
 spec:
   revisionHistoryLimit: 1
@@ -20,15 +20,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bitcoin-main
+      app: bitcoin
   template:
     metadata:
       labels:
-        app: bitcoin-main
-      name: bitcoin-main
+        app: bitcoin
+      name: bitcoin
     spec:
       containers:
-      - name: bitcoin-main
+      - name: bitcoin
         image: docker.io/swisschains/sirius-integrations-bitcoin:latest
         imagePullPolicy: Always
         lifecycle:
@@ -66,7 +66,7 @@ spec:
         - name: RemoteSettingsUrls__1
           value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin-main"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin"
       tolerations:
        - effect: NoSchedule
          operator: Exists

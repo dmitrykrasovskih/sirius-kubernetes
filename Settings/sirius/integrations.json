@@ -1,5 +1,10 @@
 {
   "Db": {
     "ConnectionString": "${Sirius-Integrations-DbConnectionString}"
-  }
+  },
+  "IntegrationUrls": [
+    "http://bitcoin-swisschain-private.sirius-integrations.svc.cluster.local",
+    "http://bitcoin-test.sirius-integrations.svc.cluster.local",
+    "http://bitcoin.sirius-integrations.svc.cluster.local"
+  ]
 }
