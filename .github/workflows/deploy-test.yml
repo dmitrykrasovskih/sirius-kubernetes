@@ -3,7 +3,10 @@ name: Deploy test
 on:
   push:
     branches: [ test ]
-
+    paths:
+    - 'Namespaces/**'
+    - 'Pods/**'    
+    
 jobs:
   deploy:
     name: deploy

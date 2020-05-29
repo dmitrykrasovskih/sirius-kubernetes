@@ -1,8 +1,8 @@
-name: Deploy test settings
+name: Deploy prod settings
 
 on:
   push:
-    branches: [ test ]
+    branches: [ master ]
     paths:
     - 'Settings/**'
     
@@ -24,6 +24,6 @@ jobs:
     - name: Restart Settings Server
       uses: swisschain/kube-restart-pods@master
       env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA_TEST }}
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         NAMESPACE: sirius
         POD: settings

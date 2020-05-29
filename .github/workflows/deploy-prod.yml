@@ -1,9 +1,12 @@
-name: Deploy
+name: Deploy Prod
 
 on:
   push:
-    branches: [ test ]
-
+    branches: [ master ]
+    paths:
+    - 'Namespaces/**'
+    - 'Pods/**' 
+    
 jobs:
   deploy:
     name: deploy

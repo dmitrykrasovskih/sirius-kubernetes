@@ -1,4 +1,4 @@
-{
+{ 
   "SeqUrl": "http://seq.common.svc.cluster.local",
   "Serilog": {
     "minimumLevel": {
