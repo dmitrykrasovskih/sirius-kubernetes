@@ -13,7 +13,7 @@
     }
   },
   "disableConsoleLogOutput": "${Sirius-DisableConsoleLogOutput}",
-  "RemoteSettingsRequired": true
+  "RemoteSettingsRequired": true,
   "ElasticsearchLogs": {
     "NodeUrls": [ "http://elasticsearch.sirius-monitoring:9200" ],
     "IndexPrefixName": "sirius-logs"
