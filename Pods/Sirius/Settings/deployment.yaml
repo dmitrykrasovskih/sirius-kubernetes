@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: settings
-        image: docker.io/swisschains/settings-showroom:latest
+        image: docker.io/swisschains/settings-showroom:sirius
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
