@@ -60,6 +60,8 @@ spec:
             memory: 1024Mi 
             cpu: 2000m
         env:
+        - name: APPINSIGHTS_INSTRUMENTATIONKEY
+          value: 57b06f13-1399-4c9f-a4a1-f02aa9bf3636
         - name: RemoteSettingsRequired
           valut: "true"
         - name: RemoteSettingsUrls__0 
