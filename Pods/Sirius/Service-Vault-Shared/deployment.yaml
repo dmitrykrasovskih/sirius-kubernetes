@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Vault
+    description: Shared Vault
   labels:
-    app: vault-worker
+    app: vault-shared
     environment: Development
     tier: Service
-  name: vault-worker
+  name: vault-shared
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vault-worker
+      app: vault-shared
   template:
     metadata:
       labels:
-        app: vault-worker
-      name: vault-worker
+        app: vault-shared
+      name: vault-shared
     spec:
       containers:
-      - name: vault-worker
-        image: docker.io/swisschains/sirius-vault-worker:latest
+      - name: vault-shared
+        image: docker.io/swisschains/sirius-vault:latest
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,6 +40,7 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
+        - containerPort: 5001
         readinessProbe:
           httpGet:
             path: /api/isalive
@@ -65,7 +66,7 @@ spec:
         - name: RemoteSettingsUrls__1 
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/vault"
+          value: "http://settings.sirius.svc.cluster.local/sirius/vault-shared"
       tolerations:
        - effect: NoSchedule
          operator: Exists
