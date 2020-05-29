@@ -15,7 +15,7 @@
   "disableConsoleLogOutput": "${Sirius-DisableConsoleLogOutput}",
   "RemoteSettingsRequired": true
   "ElasticsearchLogs": {
-    "NodeUrls": [ "http://elk.monitoring.svc.cluster.local:9200" ],
+    "NodeUrls": [ "http://elasticsearch.sirius-monitoring:9200" ],
     "IndexPrefixName": "sirius-logs"
   }
 }
