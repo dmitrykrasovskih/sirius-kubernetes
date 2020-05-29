@@ -4,7 +4,7 @@
   },
   "Secret": {
     "Key": "${Sirius-Vault-Shared-SecretKey}"
-  }
+  },
   "SiriusApi": {
     "Url": "http://api.sirius.svc.cluster.local",
     "Token": "${Sirius-Vault-Shared-ApiToken}"
