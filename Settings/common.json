@@ -16,6 +16,6 @@
   "RemoteSettingsRequired": true
   "ElasticsearchLogs": {
     "NodeUrls": [ "http://elk.monitoring.svc.cluster.local:9200" ],
-    "IndexPrefixName": "logs"
+    "IndexPrefixName": "sirius-logs"
   }
 }
