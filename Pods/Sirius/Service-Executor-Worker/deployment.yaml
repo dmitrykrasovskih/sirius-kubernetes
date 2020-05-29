@@ -61,11 +61,11 @@ spec:
             cpu: 500m 
         env:
         - name: RemoteSettingsUrls__0 
-          value: "http://settings.common.svc.cluster.local/common"
+          value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
-          value: "http://settings.common.svc.cluster.local/sirius/common"
+          value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common.svc.cluster.local/sirius/executor"
+          value: "http://settings.sirius.svc.cluster.local/sirius/executor"
       tolerations:
        - effect: NoSchedule
          operator: Exists

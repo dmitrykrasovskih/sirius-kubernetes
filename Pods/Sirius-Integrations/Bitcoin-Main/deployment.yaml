@@ -62,11 +62,11 @@ spec:
             cpu: 3000m
         env:
         - name: RemoteSettingsUrls__0 
-          value: "http://settings.common.svc.cluster.local/common"
+          value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1
-          value: "http://settings.common.svc.cluster.local/sirius-integrations/common"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common.svc.cluster.local/sirius-integrations/bitcoin-main"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin-main"
       tolerations:
        - effect: NoSchedule
          operator: Exists
