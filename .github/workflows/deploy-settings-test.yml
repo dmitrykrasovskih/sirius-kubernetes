@@ -1,4 +1,4 @@
-name: Deploy Settings
+name: Deploy test settings
 on:
   push:
     branches: [ test ]
