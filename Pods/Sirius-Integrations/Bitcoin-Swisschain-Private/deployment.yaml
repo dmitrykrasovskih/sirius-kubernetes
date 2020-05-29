@@ -61,6 +61,8 @@ spec:
             memory: 512Mi
             cpu: 1000m
         env:
+        - name: RemoteSettingsRequired
+          valut: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1
