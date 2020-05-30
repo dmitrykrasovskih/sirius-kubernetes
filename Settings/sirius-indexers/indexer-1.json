@@ -3,6 +3,7 @@
     "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
   },
   "Indexing": {
-
+    "Blockchains": {
+    }
   }
 }
