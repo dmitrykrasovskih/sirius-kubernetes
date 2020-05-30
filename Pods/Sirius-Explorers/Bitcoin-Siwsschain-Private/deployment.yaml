@@ -74,4 +74,4 @@ spec:
         - name: RPC_HOST 
           value: "bitcoin-swisschain-private.sirius-nodes.svc.cluster.local"
         - name: RPC_PORT
-          value: "18443"
+          value: "80"
