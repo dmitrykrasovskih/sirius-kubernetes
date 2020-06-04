@@ -1,5 +1,4 @@
 {
-  "APPINSIGHTS_INSTRUMENTATIONKEY": "${Sirius-Indexer-AppInsightsKey}",
   "Serilog": {
     "minimumLevel": {
       "override": {
