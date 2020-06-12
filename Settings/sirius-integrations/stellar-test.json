@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "http://144.76.25.187:8020/"
+    "Url": "http://stellar-test.sirius-nodes.svc.cluster.local"
   },
   "Blockchain": {
     "Id": "stellar-test",
