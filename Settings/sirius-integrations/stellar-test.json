@@ -1,0 +1,10 @@
+{
+  "Node": {
+    "Url": "http://144.76.25.187:8020/"
+  },
+  "Blockchain": {
+    "Id": "stellar-test",
+    "Name": "Stellar test network",
+    "NetworkType": "Test"
+  }
+}
