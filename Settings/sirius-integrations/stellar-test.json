@@ -1,0 +1,10 @@
+{
+  "Node": {
+    "Url": "http://stellar-test.sirius-nodes.svc.cluster.local"
+  },
+  "Blockchain": {
+    "Id": "stellar-test",
+    "Name": "Stellar test network",
+    "NetworkType": "Test"
+  }
+}
