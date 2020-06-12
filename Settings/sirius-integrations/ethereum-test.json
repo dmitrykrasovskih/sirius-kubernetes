@@ -1,0 +1,11 @@
+{
+  "Node": {
+    "Url": "http://ethereum-test.sirius-nodes.svc.cluster.local"
+  },
+  "Blockchain": {
+    "Id": "ethereum-ropsten",
+    "Name": "Ethereum test network",
+    "NetworkType": "Test",
+    "GasLimit":  400000 
+  }
+}
