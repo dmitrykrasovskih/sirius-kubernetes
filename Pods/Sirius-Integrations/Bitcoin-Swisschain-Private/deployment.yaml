@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: bitcoin-swisschain-private
-        image: docker.io/swisschains/sirius-integrations-bitcoin:latest
+        image: docker.io/swisschains/sirius-integrations-bitcoin:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
