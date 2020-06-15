@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Ethereum TestNet
+    description: Ethereum Ropsten TestNet
   labels:
-    app: ethereum-test
+    app: ethereum-ropsten
     environment: Development
     tier: Service
-  name: ethereum-test
+  name: ethereum-ropsten
   namespace: sirius-integrations
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ethereum-test
+      app: ethereum-ropsten
   template:
     metadata:
       labels:
-        app: ethereum-test
-      name: ethereum-test
+        app: ethereum-ropsten
+      name: ethereum-ropsten
     spec:
       containers:
-      - name: ethereum-test
-        image: docker.io/swisschains/sirius-integrations-ethereum:latest
+      - name: ethereum-ropsten
+        image: docker.io/swisschains/sirius-integrations-ethereum:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -68,7 +68,7 @@ spec:
         - name: RemoteSettingsUrls__1
           value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/ethereum-test"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/ethereum-ropsten"
       tolerations:
        - effect: NoSchedule
          operator: Exists
