@@ -92,7 +92,7 @@ data:
     # bitcoin-test.sirius-nodes
     server {
       listen 8041;
-      proxy_pass 144.76.25.187:8041;
+      proxy_pass 51.137.113.82:18443;
     }
 
     # ethereum-ropsten.sirius-nodes

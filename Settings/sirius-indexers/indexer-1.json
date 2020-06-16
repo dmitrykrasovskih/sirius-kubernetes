@@ -4,19 +4,9 @@
   },
   "Indexing": {
     "Blockchains": {
-      "bitcoin-swisschain-private": {
-        "FirstPassIndexersCount": 10,
-        "LastHistoricalBlockNumber": 155669,
-        "DelayOnBlockNotFound": "00:00:10"
-      },
       "bitcoin-test": {
         "FirstPassIndexersCount": 10,
         "LastHistoricalBlockNumber": 1746887,
-        "DelayOnBlockNotFound": "00:00:30"
-      },
-      "bitcoin": {
-        "FirstPassIndexersCount": 10,
-        "LastHistoricalBlockNumber": 632306,
         "DelayOnBlockNotFound": "00:00:30"
       }
     }
