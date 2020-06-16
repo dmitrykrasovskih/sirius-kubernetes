@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "http://ethereum-test.sirius-nodes.svc.cluster.local"
+    "Url": "http://ethereum-ropsten.sirius-nodes.svc.cluster.local"
   },
   "Blockchain": {
     "Id": "ethereum-ropsten",
