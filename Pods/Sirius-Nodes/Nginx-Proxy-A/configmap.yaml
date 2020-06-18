@@ -104,7 +104,7 @@ data:
     # bitcoin.sirius-nodes
     server {
       listen 8332;
-      proxy_pass 94.130.210.71:8332;
+      proxy_pass 104.45.43.60:8332;
     }
 
     # ethereum.sirius-nodes
