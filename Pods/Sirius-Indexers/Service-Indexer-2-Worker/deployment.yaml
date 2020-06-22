@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: indexer-1-worker
+    description: indexer-2-worker
   labels:
-    app: indexer-1-worker
+    app: indexer-2-worker
     environment: Development
     tier: Service
-  name: indexer-1-worker
+  name: indexer-2-worker
   namespace: sirius-indexers
 spec:
   revisionHistoryLimit: 1
@@ -17,18 +17,18 @@ spec:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
-      app: indexer-1-worker
+      app: indexer-2-worker
   template:
     metadata:
       labels:
-        app: indexer-1-worker
-      name: indexer-1-worker
+        app: indexer-2-worker
+      name: indexer-2-worker
     spec:
       containers:
-      - name: indexer-1-worker
+      - name: indexer-2-worker
         image: docker.io/swisschains/sirius-indexer-worker:0.0.26
         imagePullPolicy: Always
         lifecycle:
@@ -69,7 +69,7 @@ spec:
         - name: RemoteSettingsUrls__2
           value: "http://settings.sirius.svc.cluster.local/sirius-indexers/common"
         - name: RemoteSettingsUrls__3
-          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-1"
+          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-2"
       tolerations:
        - effect: NoSchedule
          operator: Exists
