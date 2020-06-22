@@ -1,12 +1,12 @@
 {
   "Db": {
-    "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+    "ConnectionString": "${Sirius-Indexer-2-DbConnectionString}"
   },
   "Indexing": {
     "Blockchains": {
-      "bitcoin-test": {
+      "bitcoin": {
         "FirstPassIndexersCount": 10,
-        "LastHistoricalBlockNumber": 1772899,
+        "LastHistoricalBlockNumber": 635848,
         "DelayOnBlockNotFound": "00:00:30"
       }
     }
