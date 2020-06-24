@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: indexer-1-azure-worker
-        image: docker.io/swisschains/sirius-indexer-worker:0.0.26
+        image: docker.io/swisschains/sirius-indexer-worker:0.0.27
         imagePullPolicy: Always
         lifecycle:
           postStart:
