@@ -1,5 +1,11 @@
 {
   "Db": {
     "ConnectionString": "${Sirius-VaultAgent-DbConnectionString}"
+  },
+  "Jobs": {
+    "VaultOfflineStatus": {
+      "Delay": "00:01:00",
+      "OfflineTimeout": "00:10:00"
+    }
   }
 }
