@@ -1,5 +1,11 @@
 {
   "Db": {
     "ConnectionString": "${Sirius-Confirmator-DbConnectionString}"
+  },
+  "Blockchains":
+  {
+    "bitcoin-regtest" : { "RequiredConfirmationsCount": 3 },
+    "ethereum-ropsten" : { "RequiredConfirmationsCount": 3 },
+    "bitcoin-private" : { "RequiredConfirmationsCount": 3 }
   }
 }
