@@ -6,8 +6,8 @@ metadata:
     environment: test
   name: nginx-proxy-a
   namespace: sirius-nodes
-#  annotations:
-#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   ports:
   - name: "80"
