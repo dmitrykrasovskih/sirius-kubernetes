@@ -4,8 +4,8 @@
   },
   "Blockchains":
   {
-    "bitcoin-regtest" : { "RequiredConfirmationsCount": 3 },
-    "ethereum-ropsten" : { "RequiredConfirmationsCount": 3 },
-    "bitcoin-private" : { "RequiredConfirmationsCount": 3 }
+    "bitcoin-regtest" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinRegtest-RequiredConfirmationsCount} },
+    "bitcoin-private" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinPrivate-RequiredConfirmationsCount} },
+    "ethereum-ropsten" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-EthereumRopsten-RequiredConfirmationsCount} }
   }
 }
