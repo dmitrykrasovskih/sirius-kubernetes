@@ -4,10 +4,10 @@ metadata:
   annotations:
     description: Litecoin RegtTest
   labels:
-    app: litecoin
+    app: litecoin-private
     environment: Development
     tier: Service
-  name: litecoin
+  name: litecoin-private
   namespace: sirius-integrations
 spec:
   revisionHistoryLimit: 1
@@ -20,15 +20,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: litecoin
+      app: litecoin-private
   template:
     metadata:
       labels:
-        app: litecoin
-      name: litecoin
+        app: litecoin-private
+      name: litecoin-private
     spec:
       containers:
-      - name: litecoin
+      - name: litecoin-private
         image: docker.io/swisschains/sirius-integrations-litecoin:1.0.0
         imagePullPolicy: Always
         lifecycle:
