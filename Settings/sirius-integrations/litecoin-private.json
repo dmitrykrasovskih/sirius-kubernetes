@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-Litecoin-NodeUser}",
+    "Password": "${SiriusIntegrations-Litecoin-NodePassword}",
+    "Url": "http://litecoin-private.sirius-nodes.svc.cluster.local"
+  },
+  "Blockchain": {
+    "Id": "litecoin",
+    "Name": "Litecoin regtest",
+    "NetworkType": "Private"
+  }
+}

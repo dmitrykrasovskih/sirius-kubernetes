@@ -119,6 +119,12 @@ data:
       proxy_pass 144.76.25.187:8020;
     }
 
+    # litecoin-private.sirius-nodes
+    server {
+      listen 8045;
+      proxy_pass 144.76.25.187:8045;
+    }
+
 kind: ConfigMap
 metadata:
   name: nginx-proxy-a-conf
