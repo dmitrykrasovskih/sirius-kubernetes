@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Confirmator
+    description: Litecoin Swisschain Private Network Explorer
   labels:
-    app: confirmator-worker
+    app: litecoin-swisschain-private
     environment: Development
     tier: Service
-  name: confirmator-worker
-  namespace: sirius
+  name: litecoin-swisschain-private
+  namespace: sirius-explorers
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: confirmator-worker
+      app: litecoin-swisschain-private
   template:
     metadata:
       labels:
-        app: confirmator-worker
-      name: confirmator-worker
+        app: litecoin-swisschain-private
+      name: litecoin-swisschain-private
     spec:
       containers:
-      - name: confirmator-worker
-        image: docker.io/swisschains/sirius-confirmator-worker:0.0.1
+      - name: litecoin-swisschain-private
+        image: oktapodia/btc-rpc-explorer
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,16 +40,17 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
+        - containerPort: 5001
         readinessProbe:
           httpGet:
-            path: /api/isalive
-            port: 5000
+            path: /
+            port: 3002
           initialDelaySeconds: 40
           periodSeconds: 10
         livenessProbe:
           httpGet:
-            path: /api/isalive
-            port: 5000
+            path: /
+            port: 3002
           initialDelaySeconds: 40
           periodSeconds: 20
         resources:
@@ -60,16 +61,17 @@ spec:
             memory: 128Mi 
             cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
-        - name: RemoteSettingsUrls__0 
-          value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/confirmator"
-      tolerations:
-       - effect: NoSchedule
-         operator: Exists
-      nodeSelector:
-          agentpool: sirius
+        - name: RPC_USER
+          valueFrom:
+            secretKeyRef:
+              name: litecoin-swisschain-private
+              key: LITECOIN_RPC_USER
+        - name: LITECOIN_RPC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: litecoin-swisschain-private
+              key: LITECOIN_RPC_PASS
+        - name: RPC_HOST 
+          value: "litecoin-private.sirius-nodes.svc.cluster.local"
+        - name: RPC_PORT
+          value: "80"

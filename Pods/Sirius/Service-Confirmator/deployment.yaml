@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: confirmator
-        image: docker.io/swisschains/sirius-confirmator:latest
+        image: docker.io/swisschains/sirius-confirmator:0.0.1
         imagePullPolicy: Always
         lifecycle:
           postStart:
