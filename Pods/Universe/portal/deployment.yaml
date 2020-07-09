@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: universe-admin-panel
+    description: universe-portal
   labels:
-    app: admin-panel
+    app: portal
     environment: Development
     tier: Service
-  name: admin-panel
+  name: portal
   namespace: universe
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: admin-panel
+      app: portal
   template:
     metadata:
       labels:
-        app: admin-panel
-      name: admin-panel
+        app: portal
+      name: portal
     spec:
       containers:
-      - name: admin-panel
-        image: docker.io/swisschains/universe-admin-panel:1.0.0
+      - name: portal
+        image: docker.io/swisschains/universe-portal:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -58,4 +58,9 @@ spec:
             cpu: 40m 
           limits:
             memory: 1024Mi 
-            cpu: 1000m 
+            cpu: 1000m
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+          agentpool: universe
