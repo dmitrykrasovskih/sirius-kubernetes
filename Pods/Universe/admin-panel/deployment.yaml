@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: universe-admin-panel
+  labels:
+    app: admin-panel
+    environment: Development
+    tier: Service
+  name: admin-panel
+  namespace: universe
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-panel
+  template:
+    metadata:
+      labels:
+        app: admin-panel
+      name: admin-panel
+    spec:
+      containers:
+      - name: admin-panel
+        image: docker.io/swisschains/universe-admin-panel:1.0.0
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: 128Mi 
+            cpu: 40m 
+          limits:
+            memory: 1024Mi 
+            cpu: 1000m 
