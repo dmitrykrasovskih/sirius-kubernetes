@@ -83,6 +83,11 @@ data:
   #  options ndots:5
 
   default.stream: |
+    # api.sirius
+    server {
+      listen 100;
+      proxy_pass api.sirius:80;
+    }
     # bitcoin-regtest.sirius-nodes
     server {
       listen 18443;
