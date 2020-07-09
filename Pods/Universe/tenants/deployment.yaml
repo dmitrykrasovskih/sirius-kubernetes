@@ -67,7 +67,7 @@ spec:
         - name: RemoteSettingsUrls__1
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common.svc.cluster.local/universe/tenants"
+          value: "http://settings.sirius.svc.cluster.local/universe/tenants"
       tolerations:
        - effect: NoSchedule
          operator: Exists
