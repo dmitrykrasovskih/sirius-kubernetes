@@ -8,5 +8,39 @@
   "SiriusApi": {
     "Url": "http://api.sirius.svc.cluster.local",
     "Token": "${Sirius-Vault-Shared-ApiToken}"
-  }
+  },
+  "Thresholds": {
+    "ActivateApprovementsCount": 3,
+    "ManualTransactionApprovementsCount": 3
+  },
+  "KeyKeeperSharing": {
+    "PartsCount": 6,
+    "UnlockPartsCount": 3
+  },
+  "KeyKeepers": [
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQCJ/aq740djKQVUgvKA4qDvUShU\n/qP9FDwkHCXjai+IY5Vhl6t0qWeBnnCB6xCrMjBrbBrPvpimSDgCHR++FjRQ2F+a\nT+O7buWJvmVNsoLrUTMm1p9lJll4NyPgaN98uwwA2DZMCmbdWig07WNVoDnulPl5\nR4xK+sHw2Em/F4e70QIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 1"
+    },
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQDpuueJ5ifYLKYkOFCKhBl62K9c\naGj78PW1+j31kW63siij4PH8Sox0bJ6X0l5jsocneifVN6INZ0uXhswC1C0q7wn9\nraOJjdLC/nRwAtPan12UMHl4qVzK2bptNE8L0bb4JOfOzYm1lehiG9NoanKCDjAQ\nZE5+mdK4rxzx77dNqwIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 2"
+    },
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQC8BdDpc1NelOg6a06nt17e5qCL\n8GJBdTN+kn2UPw8P3MIHPG58MSZDt+MW1Gu79Ev5lWEDGXqBGGipeE5Gtt8Zq3UX\nCzJjMdQ+VLG1gdcWEB3hV3wePP9GTwhvIYrLXFLVkS1xuf1gB1RLwsJ9D7nIzW0V\nzLBRXbntiJKk48H1bwIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 3"
+    },
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQCP+VxTKJc6IztEWks6FmrA8ojT\nk+igP4PVp0t5NkLTGKWbv4RmzfJqjT1s15JJ5xGfHpVtw0EfcC+Ecf1x/DGj5sRl\nUy6yETVPteW5t+pRBksJA7vRlZDMgoY0kmjqBHwIou2fKlsb3JGgF6+wQ6GH0Z/x\nQeny7jO1dq9egCpKXQIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 4"
+    },
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQDhS3tJm2UWPb9FqGbn/CCLxJUc\nh67JebrGMgi/jqtyMHiseQvP2/0egrERgfQZ8EgAevFBCa5Inj2A3xw5unonyJVT\nJeNh6f3GN4TjHyFufr8SOQULzMibvZxriPyQKv5TNzRV5dgFoR4FehpgT3ipa0Tc\nu29bbxVwS0uFsZVNHQIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 5"
+    },
+    {
+      "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQC4Wt1Qqxu6ykcZiH1FvKyaZdUO\nMlF41KlnVq1IPi91X00rqIgiQl2odsdmJvJ3gqhw68APYmxctgj9gBkfhnTxiUbZ\n5kDwGRBuCdv5mQpKf6Qv9IkXHh9pF1IUrFJGo4tNDDgfFbqM32Dp7S3AOGt6fk5i\nFVZnZuWFEzzMkTIjvwIBAw==\n-----END PUBLIC KEY-----",
+      "Description": "key keeper 6"
+    }    
+  ],
 }
