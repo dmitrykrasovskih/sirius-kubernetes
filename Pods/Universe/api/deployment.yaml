@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Ethereum Ropsten TestNet
-  labels:
-    app: ethereum-ropsten
+    description: api
+  labels: 
+    app: api
     environment: Development
     tier: Service
-  name: ethereum-ropsten
-  namespace: sirius-integrations
+  name: api
+  namespace: universe
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ethereum-ropsten
+      app: api
   template:
     metadata:
       labels:
-        app: ethereum-ropsten
-      name: ethereum-ropsten
+        app: api
+      name: api
     spec:
       containers:
-      - name: ethereum-ropsten
-        image: docker.io/swisschains/sirius-integrations-ethereum:1.3.0
+      - name: api
+        image: docker.io/swisschains/universe-api:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,7 +40,6 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
-        - containerPort: 5001
         readinessProbe:
           httpGet:
             path: /api/isalive
@@ -55,22 +54,20 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 128Mi
-            cpu: 100m
+            memory: 64Mi 
+            cpu: 40m 
           limits:
-            memory: 1536Mi
-            cpu: 3000m
+            memory: 128Mi 
+            cpu: 500m 
         env:
         - name: RemoteSettingsRequired
           value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1
-          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/ethereum-ropsten"
+          value: "http://settings.sirius.svc.cluster.local/universe/api"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirintegrat
+          agentpool: universe

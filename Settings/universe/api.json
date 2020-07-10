@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "JwtSecret": "${JwtTokenSecret}",
+    "Audience": "swisschain.io"
+  },
+  "TenantsClient": {
+    "ServiceAddress": "http://tenants.universe.svc.cluster.local/"
+  }
+}

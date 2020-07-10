@@ -1,0 +1,14 @@
+{
+  "Db": {
+    "ConnectionString": "${Universe-Tenants-DbConnectionString}"
+  },
+  "Auth": {
+    "JwtSecret": "${JwtTokenSecret}",
+    "Audiences": {
+      "Main": "swisschain.io",
+      "Sirius": "sirius.swisschain.io",
+      "Exchange": "exchange.swisschain.io"
+    },
+    "Ttl": "7.00:00:00"
+  }
+}
