@@ -85,11 +85,6 @@ data:
   default.stream: |
     # portal.universe
     server {
-      listen 130;
-      proxy_pass portal.universe:80;
-    }
-    # portal.universe
-    server {
       listen 120;
       proxy_pass portal.universe:80;
     }
