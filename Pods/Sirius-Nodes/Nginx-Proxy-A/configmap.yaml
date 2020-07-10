@@ -83,6 +83,21 @@ data:
   #  options ndots:5
 
   default.stream: |
+    # portal.universe
+    server {
+      listen 120;
+      proxy_pass portal.universe:80;
+    }
+    # portal.universe
+    server {
+      listen 120;
+      proxy_pass portal.universe:80;
+    }
+    # api.universe
+    server {
+      listen 110;
+      proxy_pass api.universe:80;
+    }
     # api.sirius
     server {
       listen 100;
