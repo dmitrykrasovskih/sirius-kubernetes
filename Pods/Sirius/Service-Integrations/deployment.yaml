@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: integrations
-        image: docker.io/swisschains/sirius-integrations:latest
+        image: docker.io/swisschains/sirius-integrations:0.0.1
         imagePullPolicy: Always
         lifecycle:
           postStart:
