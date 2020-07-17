@@ -31,7 +31,7 @@ spec:
       - effect: NoSchedule
         operator: Exists
       nodeSelector:
-         type: Monitoring-1
+        agentpool: elastic
 #      nodeSelector:
 #        kubernetes.io/hostname: k8s-test-p-node-3
       containers:
