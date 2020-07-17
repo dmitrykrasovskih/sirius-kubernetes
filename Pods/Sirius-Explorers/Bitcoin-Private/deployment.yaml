@@ -74,4 +74,4 @@ spec:
         - name: RPC_HOST 
           value: "bitcoin-regtest.nodes.swisschain.io"
         - name: RPC_PORT
-          value: "80"
+          value: "443"
