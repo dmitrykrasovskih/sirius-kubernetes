@@ -31,7 +31,7 @@ spec:
       - effect: NoSchedule
         operator: Exists
       nodeSelector:
-        agentpool: elastic
+        agentpool: sirius
 #      nodeSelector:
 #        kubernetes.io/hostname: k8s-test-p-node-3
       containers:
