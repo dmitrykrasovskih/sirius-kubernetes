@@ -80,41 +80,6 @@ data:
       listen 100;	
       proxy_pass api.sirius:80;	
     }	
-    # bitcoin-regtest.sirius-nodes	
-    server {	
-      listen 18443;	
-      proxy_pass 138.201.119.59:18443;	
-    }	
-    # bitcoin-test.sirius-nodes	
-    server {	
-      listen 8041;	
-      proxy_pass 51.137.113.82:18443;	
-    }	
-    # ethereum-ropsten.sirius-nodes	
-    server {	
-      listen 8545;	
-      proxy_pass 138.201.89.196:8545;	
-    }	
-    # bitcoin.sirius-nodes	
-    server {	
-      listen 8332;	
-      proxy_pass 104.45.43.60:8332;	
-    }	
-    # ethereum.sirius-nodes	
-    server {	
-      listen 8000;	
-      proxy_pass 94.130.210.71:8000;	
-    }	
-    # stellar-test.sirius-nodes	
-    server {	
-      listen 8020;	
-      proxy_pass 144.76.25.187:8020;	
-    }	
-    # litecoin-private.sirius-nodes	
-    server {	
-      listen 8045;	
-      proxy_pass 144.76.25.187:8045;	
-    }	
 kind: ConfigMap	
 metadata:	
   name: nginx-proxy-a-conf	
