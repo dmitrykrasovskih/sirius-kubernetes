@@ -72,6 +72,6 @@ spec:
               name: litecoin-private
               key: LITECOIN_RPC_PASS
         - name: RPC_HOST 
-          value: "https://litecoin-regtest.nodes.swisschain.io"
+          value: "litecoin-regtest.nodes.swisschain.io"
         - name: RPC_PORT
           value: "80"
