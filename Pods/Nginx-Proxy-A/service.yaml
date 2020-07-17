@@ -1,0 +1,47 @@
+apiVersion: v1	
+kind: Service	
+metadata:	
+  labels:	
+    app: nginx-proxy-a	
+    environment: test	
+  name: nginx-proxy-a	
+  namespace: gateway
+#  annotations:	
+#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"	
+spec:	
+  ports:	
+  - name: "sirius-api"	
+    port: 100	
+    protocol: TCP	
+    targetPort: 100	
+  - name: "universe-api"	
+    port: 110	
+    protocol: TCP	
+    targetPort: 110	
+  - name: "universe-admin"	
+    port: 120	
+    protocol: TCP	
+    targetPort: 120	
+  - name: "exchange-api"	
+    port: 130	
+    protocol: TCP	
+    targetPort: 130	
+  - name: "template-quasar"	
+    port: 140	
+    protocol: TCP	
+    targetPort: 140	
+  - name: "quasar-grpc"	
+    port: 150	
+    protocol: TCP	
+    targetPort: 150	
+  - name: "quasar-http"	
+    port: 160	
+    protocol: TCP	
+    targetPort: 160	
+  selector:	
+    app: nginx-proxy-a	
+  sessionAffinity: None	
+  type: ClusterIP	
+  type: LoadBalancer	
+  loadBalancerSourceRanges:	
+  - 52.236.177.182/32

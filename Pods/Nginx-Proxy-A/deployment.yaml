@@ -1,0 +1,107 @@
+apiVersion: extensions/v1beta1	
+kind: Deployment	
+metadata:	
+  annotations:	
+    description: Sirius Proxy	
+  labels:	
+    app: nginx-proxy-a	
+    environment: production	
+    tier: proxy	
+  name: nginx-proxy-a	
+  namespace: gateway	
+spec:	
+  revisionHistoryLimit: 5	
+  minReadySeconds: 10	
+  strategy:	
+    type: RollingUpdate	
+    rollingUpdate:	
+      maxUnavailable: 1	
+      maxSurge: 1	
+  replicas: 1	
+  selector:	
+    matchLabels:	
+      app: nginx-proxy-a	
+  template:	
+    metadata:	
+      labels:	
+        app: nginx-proxy-a	
+      name: nginx-proxy-a	
+    spec:	
+      #affinity:	
+      #  nodeAffinity:	
+      #    requiredDuringSchedulingIgnoredDuringExecution:	
+      #      nodeSelectorTerms:	
+      #      - matchExpressions:	
+      #        - key: node-role.kubernetes.io/master	
+      #          operator: Exists	
+      #tolerations:	
+      #- effect: NoSchedule	
+      #  key: node-role.kubernetes.io/master	
+      #  operator: Equal	
+      #tolerations:	
+      #- effect: NoSchedule	
+      #  operator: Exists	
+      #nodeSelector:	
+      #  type: GATEWAY	
+      containers:	
+        # api-main-proxy image	
+      - name: nginx-proxy-a	
+        image: lykkex/nginx:2.0.3	
+        imagePullPolicy: IfNotPresent	
+
+        readinessProbe:	
+          httpGet:	
+            path: /probe	
+            port: 81	
+          initialDelaySeconds: 5	
+          periodSeconds: 10	
+
+        livenessProbe:	
+          httpGet:	
+            path: /probe	
+            port: 81	
+          initialDelaySeconds: 15	
+          periodSeconds: 20 	
+
+        resources:	
+          requests:	
+            memory: "100Mi"	
+            cpu: 0.1	
+          limits:	
+            memory: "512Mi"	
+            cpu: 1	
+
+        env:	
+          - name: version	
+            value: "1.0.1"	
+          #- name: GitConnectionString	
+          #  valueFrom:	
+          #    secretKeyRef:	
+          #      name: kubernetes-jobs-hz-nginx-proxy-a	
+          #      key: GitConnectionString	
+          - name: ENV_INFO	
+            valueFrom:	
+              fieldRef:	
+                fieldPath: metadata.name	
+
+        volumeMounts:	
+        - mountPath: /etc/nginx/conf.d/headers.conf	
+          name: nginx-proxy-a-conf	
+          subPath: headers.conf	
+        - mountPath: /etc/nginx/conf.d/default.conf	
+          name: nginx-proxy-a-conf	
+          subPath: default.conf	
+        - mountPath: /etc/nginx/nginx.conf	
+          name: nginx-proxy-a-conf	
+          subPath: nginx.conf	
+        #- mountPath: /etc/resolv.conf	
+        #  name: nginx-proxy-a-conf	
+        #  subPath: resolv.conf	
+        - mountPath: /etc/nginx/conf.d/default.stream	
+          name: nginx-proxy-a-conf	
+          subPath: default.stream	
+
+      volumes:	
+      - configMap:	
+          name: nginx-proxy-a-conf	
+        name: nginx-proxy-a-conf
