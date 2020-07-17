@@ -1,12 +1,12 @@
 {
   "Blockchains": {
-    "bitcoin": {
+    "litecoin": {
       "Db": {
         "ConnectionString": "${Sirius-Indexer-DbConnectionString-Hetzner-1}"
       },
       "Indexing": {
         "FirstPassIndexersCount": 5,
-        "LastHistoricalBlockNumber": 639700,
+        "LastHistoricalBlockNumber": 1878500,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }

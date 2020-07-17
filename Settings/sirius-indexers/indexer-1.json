@@ -1,13 +1,63 @@
 {
-  "Db": {
-    "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
-  },
-  "Indexing": {
-    "Blockchains": {
-      "bitcoin-test": {
-        "FirstPassIndexersCount": 10,
-        "LastHistoricalBlockNumber": 1772899,
-        "DelayOnBlockNotFound": "00:00:30"
+  "Blockchains": {
+    "bitcoin-private": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 2,
+        "LastHistoricalBlockNumber": 225000,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "bitcoin-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1780950,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "litecoin-private": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 2,
+        "LastHistoricalBlockNumber": 13740,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "litecoin-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1561600,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "ethereum-ropsten": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 8311200,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "stellar-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1253000,
+        "DelayOnBlockNotFound": "00:00:01"
       }
     }
   }

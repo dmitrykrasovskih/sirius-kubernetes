@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-Bitcoin-Private-NodeUser}",
+    "Password": "${SiriusIntegrations-Bitcoin-Private-NodePassword}",
+    "Url": "https://bitcoin-regtest.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-private",
+    "Name": "Bitcoin Swisschain PrivateNet",
+    "NetworkType": "Private"
+  }
+}

@@ -1,10 +1,10 @@
 {
   "Node": {
-    "Url": "http://stellar-test.sirius-nodes.svc.cluster.local"
+    "Url": "https://stellar-testnet.nodes.swisschain.io"
   },
   "Blockchain": {
     "Id": "stellar-test",
-    "Name": "Stellar test network",
+    "Name": "Stellar TestNet",
     "NetworkType": "Test"
   }
 }

@@ -2,11 +2,11 @@
   "Node": {
     "User": "${SiriusIntegrations-Bitcoin-NodeUser}",
     "Password": "${SiriusIntegrations-Bitcoin-NodePassword}",
-    "Url": "http://bitcoin.sirius-nodes.svc.cluster.local"
+    "Url": "https://bitcoin.nodes.swisschain.io"
   },
   "Blockchain": {
     "Id": "bitcoin",
-    "Name": "Bitcoin mainnet",
+    "Name": "Bitcoin MainNet",
     "NetworkType": "Public"
   }
 }

@@ -1,10 +1,10 @@
 {
   "Node": {
-    "Url": "http://ethereum-ropsten.sirius-nodes.svc.cluster.local"
+    "Url": "https://ethereum-ropsten.nodes.swisschain.io"
   },
   "Blockchain": {
     "Id": "ethereum-ropsten",
-    "Name": "Ethereum test network",
+    "Name": "Ethereum Ropsten",
     "NetworkType": "Test",
     "GasLimit":  400000 
   }
