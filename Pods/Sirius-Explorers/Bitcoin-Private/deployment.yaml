@@ -72,6 +72,6 @@ spec:
               name: bitcoin-private
               key: BITCOIN_RPC_PASS
         - name: RPC_HOST 
-          value: "bitcoin-regtest.nodes.swisschain.io"
+          value: "144.76.25.187"
         - name: RPC_PORT
-          value: "443"
+          value: "8042"
