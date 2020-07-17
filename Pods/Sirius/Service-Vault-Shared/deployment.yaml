@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: vault-shared
-        image: docker.io/swisschains/sirius-vault:1.2.1
+        image: docker.io/swisschains/sirius-vault:1.2.2
         imagePullPolicy: Always
         lifecycle:
           postStart:
