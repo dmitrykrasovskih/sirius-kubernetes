@@ -15,7 +15,7 @@
     "ethereum" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Ethereum-RequiredConfirmationsCount} },
     "ethereum-ropsten" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Ethereum-Ropsten-RequiredConfirmationsCount} },
     
-    "stellar" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-RequiredConfirmationsCount} }
+    "stellar" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-RequiredConfirmationsCount} },
     "stellar-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-Test-RequiredConfirmationsCount} }
   }
 }
