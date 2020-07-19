@@ -49,16 +49,6 @@
         "LastHistoricalBlockNumber": 8311200,
         "DelayOnBlockNotFound": "00:00:01"
       }
-    },
-    "stellar-test": {
-      "Db": {
-        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
-      },
-      "Indexing": {
-        "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1253000,
-        "DelayOnBlockNotFound": "00:00:01"
-      }
     }
   }
 }
