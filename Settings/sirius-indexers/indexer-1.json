@@ -5,8 +5,8 @@
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
-        "FirstPassIndexersCount": 2,
-        "LastHistoricalBlockNumber": 31450,
+        "FirstPassIndexersCount": 3,
+        "LastHistoricalBlockNumber": 35925,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -16,7 +16,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1780950,
+        "LastHistoricalBlockNumber": 1781245,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -25,8 +25,8 @@
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
-        "FirstPassIndexersCount": 2,
-        "LastHistoricalBlockNumber": 13740,
+        "FirstPassIndexersCount": 3,
+        "LastHistoricalBlockNumber": 18730,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -36,7 +36,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1561600,
+        "LastHistoricalBlockNumber": 1566660,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -46,9 +46,19 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 8311200,
+        "LastHistoricalBlockNumber": 8334800,
         "DelayOnBlockNotFound": "00:00:01"
       }
-    }
+    },
+    "stellar-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1307400,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    }    	
   }
 }
