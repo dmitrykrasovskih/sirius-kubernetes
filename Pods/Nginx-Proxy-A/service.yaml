@@ -38,6 +38,14 @@ spec:
     port: 160	
     protocol: TCP	
     targetPort: 160	
+  - name: "bitcoin-explorer"
+    port: 170
+    protocol: TCP
+    targetPort: 170
+  - name: "litecoin-explorer"
+    port: 180
+    protocol: TCP
+    targetPort: 180
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	

@@ -64,7 +64,17 @@ data:
   #  search default.svc.cluster.local svc.cluster.local cluster.local	
   #  options ndots:5	
 
-  default.stream: |	
+  default.stream: |
+    # litecoin-explorer
+    server {
+      listen 180;
+      proxy_pass litecoin-private.sirius-explorers:80;
+    }	
+    # bitcoin-explorer
+    server {
+      listen 170;
+      proxy_pass bitcoin-private.sirius-explorers:80;
+    }
     # portal.universe	
     server {	
       listen 120;	
