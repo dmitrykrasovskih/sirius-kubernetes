@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: vault-agent
-        image: docker.io/swisschains/sirius-vault-agent:1.1.2
+        image: docker.io/swisschains/sirius-vault-agent:1.1.3
         imagePullPolicy: Always
         lifecycle:
           postStart:

@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: integrations-worker
-        image: docker.io/swisschains/sirius-integrations-worker:0.0.2
+        image: docker.io/swisschains/sirius-integrations-worker:0.0.3
         imagePullPolicy: Always
         lifecycle:
           postStart:

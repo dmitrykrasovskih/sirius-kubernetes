@@ -1,5 +1,5 @@
 { 
-  "SeqUrl": "http://seq.common.svc.cluster.local",
+  "SeqUrl": "http://seq.sirius-monitoring.svc.cluster.local",
   "Serilog": {
     "minimumLevel": {
       "default": "${Sirius-DefaultLoggingLevel}",
