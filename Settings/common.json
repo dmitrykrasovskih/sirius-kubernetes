@@ -8,7 +8,7 @@
         "System": "Warning",
         "Microsoft.AspNetCore": "Warning",
         "Microsoft.AspNetCore.Hosting.Diagnostics": "Warning",
-        "Microsoft.EntityFrameworkCore": "None"
+        "Microsoft.EntityFrameworkCore": "Warning"
       }
     }
   },
