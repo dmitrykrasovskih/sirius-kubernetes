@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "https://stellar.nodes.swisschain.io"
+    "Url": "https://horizon.stellar.org"
   },
   "Blockchain": {
     "Id": "stellar",
