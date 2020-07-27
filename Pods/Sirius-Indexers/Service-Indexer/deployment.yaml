@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: indexer
-        image: docker.io/swisschains/sirius-indexer:0.1.9
+        image: docker.io/swisschains/sirius-indexer:0.1.10
         imagePullPolicy: Always
         lifecycle:
           postStart:
