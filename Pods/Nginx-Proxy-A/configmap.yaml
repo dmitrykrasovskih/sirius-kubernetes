@@ -67,6 +67,11 @@ data:
   default.stream: |
     # litecoin-explorer
     server {
+      listen 190;
+      proxy_pass seq.monitoring:80;
+    }
+    # litecoin-explorer
+    server {
       listen 180;
       proxy_pass litecoin-private.sirius-explorers:80;
     }	
