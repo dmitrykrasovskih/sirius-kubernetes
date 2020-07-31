@@ -1,7 +1,7 @@
 {
   "RabbitMq": {
     "VirtualHostName": "/",
-    "QueueName": "pulsar"
+    "QueueName": "sirius-pulsar"
   },
   "Quartz": {
     "quartz.scheduler.instanceName": "Pulsar",
