@@ -63,8 +63,8 @@ spec:
         - name: Product
           value: "Sirius"
         - name: RemoteSettingsUrls__0 
-          value: "http://settings.common.svc.cluster.local/common"
+          value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
-          value: "http://settings.common.svc.cluster.local/sirius/common"
+          value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common.svc.cluster.local/sirius/pulsar"
+          value: "http://settings.sirius.svc.cluster.local/sirius/pulsar"
