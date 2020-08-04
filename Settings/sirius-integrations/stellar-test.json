@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "https://horizon-testnet.stellar.org"
+    "Url": "http://159.69.114.85:8000"
   },
   "Blockchain": {
     "Id": "stellar-test",
