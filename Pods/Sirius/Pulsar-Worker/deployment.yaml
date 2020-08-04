@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: pulsar-worker
-        image: docker.io/swisschains/messaging-pulsar-worker:1.0.1
+        image: docker.io/swisschains/messaging-pulsar-worker:1.0.2
         imagePullPolicy: Always
         lifecycle:
           postStart:
