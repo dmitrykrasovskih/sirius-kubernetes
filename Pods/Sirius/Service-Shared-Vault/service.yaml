@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: shared-vault
+    environment: Development
+  name: shared-vault
+  namespace: sirius
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  - name: grpc
+    port: 80
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: shared-vault
+  sessionAffinity: None
+  type: ClusterIP

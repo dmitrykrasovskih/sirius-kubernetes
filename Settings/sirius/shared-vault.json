@@ -1,0 +1,12 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-Shared-Vault-DbConnectionString}"
+  },
+  "VaultApi": {
+    "Url": "http://vault-api.sirius.svc.cluster.local/",
+    "Token": "${Sirius-Shared-Vault-VaultApi-Token}"
+  },
+  "Secret": {
+    "Key": "${Sirius-Shared-Vault-Secret-Key}"
+  }
+}
