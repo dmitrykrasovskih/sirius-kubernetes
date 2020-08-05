@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Simple-Vault
+    description: Shared Vault
   labels:
-    app: simple-vault
+    app: shared-vault
     environment: Development
     tier: Service
-  name: simple-vault
+  name: shared-vault
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-vault
+      app: shared-vault
   template:
     metadata:
       labels:
-        app: simple-vault
-      name: simple-vault
+        app: shared-vault
+      name: shared-vault
     spec:
       containers:
-      - name: simple-vault
-        image: docker.io/swisschains/sirius-simple-vault:1.0.0
+      - name: shared-vault
+        image: docker.io/swisschains/sirius-simple-vault:1.1.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -66,9 +66,9 @@ spec:
         - name: RemoteSettingsUrls__1 
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/simple-vault"
+          value: "http://settings.sirius.svc.cluster.local/sirius/shared-vault"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirius
