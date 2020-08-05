@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "http://159.69.114.85:8000"
+    "Url": "https://stellar-testnet.nodes.swisschain.io"
   },
   "Blockchain": {
     "Id": "stellar-test",
