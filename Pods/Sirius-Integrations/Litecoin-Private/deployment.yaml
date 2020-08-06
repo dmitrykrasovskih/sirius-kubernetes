@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: litecoin-private
-        image: docker.io/swisschains/sirius-integrations-litecoin:1.0.1
+        image: docker.io/swisschains/sirius-integrations-litecoin:1.0.2
         imagePullPolicy: Always
         lifecycle:
           postStart:

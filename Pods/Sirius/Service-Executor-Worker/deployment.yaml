@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: executor-worker
-        image: docker.io/swisschains/sirius-executor-worker:0.0.4
+        image: docker.io/swisschains/sirius-executor-worker:0.0.5
         imagePullPolicy: Always
         lifecycle:
           postStart:
