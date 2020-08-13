@@ -65,6 +65,11 @@ data:
   #  options ndots:5	
 
   default.stream: |
+    # vault-api
+    server {
+      listen 200;
+      proxy_pass vault-api.sirius:80;
+    }
     # litecoin-explorer
     server {
       listen 190;

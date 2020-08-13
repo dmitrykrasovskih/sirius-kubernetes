@@ -50,6 +50,10 @@ spec:
     port: 190
     protocol: TCP
     targetPort: 190
+  - name: "vault-api"
+    port: 200
+    protocol: TCP
+    targetPort: 200
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
