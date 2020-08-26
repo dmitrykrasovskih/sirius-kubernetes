@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-Litecoin-Private-NodeUser}",
+    "Password": "${SiriusIntegrations-Litecoin-Private-NodePassword}",
+    "Url": "https://litecoin-regtest.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "litecoin-private",
+    "Name": "Litecoin Swisschain PrivateNet",
+    "NetworkType": "Private"
+  }
+}

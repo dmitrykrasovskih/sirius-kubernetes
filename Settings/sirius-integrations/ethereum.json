@@ -1,0 +1,11 @@
+{
+  "Node": {
+    "Url": "https://ethereum.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "ethereum",
+    "Name": "Ethereum MainNet",
+    "NetworkType": "Public",
+    "GasLimit":  400000 
+  }
+}

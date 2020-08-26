@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ethereum-ropsten
+    environment: Development
+  name: ethereum-ropsten
+  namespace: sirius-integrations
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  - name: grpc
+    port: 80
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: ethereum-ropsten
+  sessionAffinity: None
+  type: ClusterIP

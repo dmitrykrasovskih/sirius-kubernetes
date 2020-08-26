@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-Bitcoin-Test-NodeUser}",
+    "Password": "${SiriusIntegrations-Bitcoin-Test-NodePassword}",
+    "Url": "https://bitcoin-testnet.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-test",
+    "Name": "Bitcoin TestNet",
+    "NetworkType": "Test"
+  }
+}

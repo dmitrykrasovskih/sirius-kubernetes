@@ -1,0 +1,12 @@
+{
+  "CommonDb": {
+    "ConnectionString": "${Sirius-Indexer-DbConnectionString}"
+  },
+  "Serilog": {
+    "minimumLevel": {
+      "override": {
+        "MassTransit": "Information"
+      }
+    }
+  }
+}

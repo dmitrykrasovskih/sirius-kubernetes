@@ -1,0 +1,11 @@
+{
+  "Node": {
+    "Url": "https://ethereum-ropsten.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "ethereum-ropsten",
+    "Name": "Ethereum Ropsten",
+    "NetworkType": "Test",
+    "GasLimit":  400000 
+  }
+}

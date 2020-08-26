@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-Litecoin-Test-NodeUser}",
+    "Password": "${SiriusIntegrations-Litecoin-Test-NodePassword}",
+    "Url": "https://litecoin-testnet.nodes.swisschain.io "
+  },
+  "Blockchain": {
+    "Id": "litecoin-test",
+    "Name": "Litecoin TestNet",
+    "NetworkType": "Test"
+  }
+}

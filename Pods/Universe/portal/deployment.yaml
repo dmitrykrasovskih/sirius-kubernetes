@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: universe-portal
+  labels:
+    app: portal
+    environment: Development
+    tier: Service
+  name: portal
+  namespace: universe
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal
+  template:
+    metadata:
+      labels:
+        app: portal
+      name: portal
+    spec:
+      containers:
+      - name: portal
+        image: docker.io/swisschains/universe-portal:1.1.2
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: 128Mi 
+            cpu: 40m 
+          limits:
+            memory: 1024Mi 
+            cpu: 1000m
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+          agentpool: universe

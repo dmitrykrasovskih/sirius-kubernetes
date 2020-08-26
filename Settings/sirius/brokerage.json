@@ -1,0 +1,19 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-Brokerage-DbConnectionString}"
+  },
+  "Executor": {
+    "Url": "http://executor.sirius.svc.cluster.local/"
+  },
+  "VaultAgent": {
+    "Url": "http://vault-agent.sirius.svc.cluster.local/"
+  },
+  "BlockchainProtocols": {
+    "stellar": {
+      "DestinationTagType": "number",
+      "ProtocolCode": "stellar",
+      "DesiredTextTagLength": 28,
+      "DesiredMaxNumberTag": 9223372036854775807
+    }
+  }
+}

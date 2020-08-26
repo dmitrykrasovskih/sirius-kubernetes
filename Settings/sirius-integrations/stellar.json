@@ -1,0 +1,10 @@
+{
+  "Node": {
+    "Url": "https://horizon.stellar.org"
+  },
+  "Blockchain": {
+    "Id": "stellar",
+    "Name": "Stellar MainNet",
+    "NetworkType": "Public"
+  }
+}

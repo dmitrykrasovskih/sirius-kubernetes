@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: litecoin-private
+    environment: dev
+  name: litecoin-private
+  namespace: sirius-explorers
+spec:
+  ports:
+  - name: "http"
+    port: 80
+    protocol: TCP
+    targetPort: 3002
+  selector:
+    app: litecoin-private
+  sessionAffinity: None
+  type: ClusterIP
+#  type: LoadBalancer

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: seq-proxy
+    environment: Production
+  #name: elasticsearch
+  name: seq
+  namespace: sirius-monitoring
+spec:
+  ports:
+  - name: tcp
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: udp
+    port: 12201
+    protocol: UDP
+    targetPort: 12201
+  - name: probe
+    port: 81
+    protocol: TCP
+    targetPort: 81
+  selector:
+    app: seq-proxy
+  sessionAffinity: None
+  type: ClusterIP

@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: Confirmator
+  labels:
+    app: confirmator-worker
+    environment: Development
+    tier: Service
+  name: confirmator-worker
+  namespace: sirius
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: confirmator-worker
+  template:
+    metadata:
+      labels:
+        app: confirmator-worker
+      name: confirmator-worker
+    spec:
+      containers:
+      - name: confirmator-worker
+        image: docker.io/swisschains/sirius-confirmator-worker:0.0.6
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 40
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 40
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: 128Mi 
+            cpu: 100m 
+          limits:
+            memory: 512Mi 
+            cpu: 1000m 
+        env:
+        - name: RemoteSettingsRequired
+          value: "true"
+        - name: RemoteSettingsUrls__0 
+          value: "http://settings.sirius.svc.cluster.local/common"
+        - name: RemoteSettingsUrls__1 
+          value: "http://settings.sirius.svc.cluster.local/sirius/common"
+        - name: RemoteSettingsUrls__2
+          value: "http://settings.sirius.svc.cluster.local/sirius/confirmator"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+          agentpool: sirius

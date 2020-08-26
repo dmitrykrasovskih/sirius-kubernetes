@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: Bitcoin MainNet
+  labels:
+    app: bitcoin
+    environment: Development
+    tier: Service
+  name: bitcoin
+  namespace: sirius-integrations
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitcoin
+  template:
+    metadata:
+      labels:
+        app: bitcoin
+      name: bitcoin
+    spec:
+      containers:
+      - name: bitcoin
+        image: docker.io/swisschains/sirius-integrations-bitcoin:1.0.3
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 5000
+        - containerPort: 5001
+        readinessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 40
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 40
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 100m
+          limits:
+            memory: 1536Mi
+            cpu: 3000m
+        env:
+        - name: RemoteSettingsRequired
+          value: "true"
+        - name: RemoteSettingsUrls__0 
+          value: "http://settings.sirius.svc.cluster.local/common"
+        - name: RemoteSettingsUrls__1
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
+        - name: RemoteSettingsUrls__2
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+          agentpool: sirintegrat

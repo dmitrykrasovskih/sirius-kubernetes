@@ -1,0 +1,28 @@
+{
+  "RabbitMq": {
+    "VirtualHostName": "/",
+    "QueueName": "sirius-pulsar"
+  },
+  "Quartz": {
+    "quartz.scheduler.instanceName": "Pulsar",
+    "quartz.scheduler.instanceId": "AUTO",
+    "quartz.serializer.type": "json",
+    "quartz.threadPool.type": "Quartz.Simpl.SimpleThreadPool, Quartz",
+    "quartz.threadPool.threadCount": "8",
+    "quartz.jobStore.misfireThreshold": "60000",
+    "quartz.jobStore.type": "Quartz.Impl.AdoJobStore.JobStoreTX, Quartz",
+    "quartz.jobStore.driverDelegateType": "Quartz.Impl.AdoJobStore.PostgreSQLDelegate, Quartz",
+    "quartz.jobStore.tablePrefix": "pulsar.",
+    "quartz.jobStore.dataSource": "quartzDS",
+    "quartz.jobStore.useProperties": "true",
+    "quartz.dataSource.quartzDS.provider": "Npgsql",
+    "quartz.dataSource.quartzDS.connectionString": "${Sirius-Pulsar-DbConnectionString}"
+  },
+  "Serilog": {
+    "minimumLevel": {
+      "override": {
+        "Quartz": "Information" 
+      }
+    }
+  }
+}

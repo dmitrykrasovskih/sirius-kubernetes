@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: rabbit
+    environment: test
+  name: rabbit
+  namespace: sirius
+spec:
+  minReadySeconds: 10
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: rabbit
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: rabbit
+        name: rabbit
+    spec:
+      containers:
+      - env:
+        - name: RABBITMQ_DEFAULT_VHOST
+          value: /
+        - name: RABBITMQ_DEFAULT_USER
+          value: user.sirius
+        - name: RABBITMQ_VM_MEMORY_HIGH_WATERMARK
+          value: "0.8"
+        - name: RABBITMQ_DEFAULT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: rabbit
+              key: RABBITMQ_DEFAULT_PASS
+        image: rabbitmq:3.7.3-management
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 120
+          periodSeconds: 20
+          successThreshold: 1
+          tcpSocket:
+            port: 5672
+          timeoutSeconds: 1
+        name: rabbit
+        ports:
+        - containerPort: 5672
+          protocol: TCP
+        - containerPort: 15672
+          protocol: TCP
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: 0.1
+          limits:
+            memory: "1024Mi"
+            cpu: 1
+        volumeMounts:
+        - mountPath: /var/lib/rabbitmq/mnesia
+          name: rabbit
+      volumes:
+      - name: rabbit
+        azureDisk:
+          kind: Managed
+          diskName: rabbit-sirius
+          diskURI: /subscriptions/791041c4-d3b5-4916-a464-1e3548275a38/resourceGroups/Kubernetes-Test/providers/Microsoft.Compute/disks/rabbit-sirius
+      dnsPolicy: ClusterFirst
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+        agentpool: agentpool
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}

@@ -1,0 +1,11 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-Executor-DbConnectionString}"
+  },
+  "Indexer": {
+    "Url": "http://indexer.sirius-indexers.svc.cluster.local/"
+  },
+  "VaultAgent": {
+    "Url": "http://vault-agent.sirius.svc.cluster.local/"
+  }
+}

@@ -1,0 +1,21 @@
+{ 
+  "SeqUrl": "http://seq.sirius-monitoring.svc.cluster.local",
+  "Serilog": {
+    "minimumLevel": {
+      "default": "${Sirius-DefaultLoggingLevel}",
+      "override": {
+        "Microsoft": "Warning",
+        "System": "Warning",
+        "Microsoft.AspNetCore": "Warning",
+        "Microsoft.AspNetCore.Hosting.Diagnostics": "Warning",
+        "Microsoft.EntityFrameworkCore": "Fatal",
+        "MassTransit": "Information"
+      }
+    }
+  },
+  "disableConsoleLogOutput": "${Sirius-DisableConsoleLogOutput}",
+  "ElasticsearchLogs": {
+    "NodeUrls": [ "http://elasticsearch.sirius-monitoring:9200" ],
+    "IndexPrefixName": "sirius-logs"
+  }
+}
