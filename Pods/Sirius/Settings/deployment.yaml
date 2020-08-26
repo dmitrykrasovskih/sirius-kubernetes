@@ -58,6 +58,11 @@ spec:
             secretKeyRef:
               name: settings
               key: ConnectionString
+        - name: ENVIRONMENT_MODE
+          valueFrom:
+            secretKeyRef:
+              name: settings
+              key: ENVIRONMENT_MODE
         - name: ENV_INFO
           valueFrom:
             fieldRef:
