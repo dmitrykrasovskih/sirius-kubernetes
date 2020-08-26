@@ -1,0 +1,24 @@
+{
+  "Blockchains": {
+    "stellar": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 30811400,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "ethereum": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 30811400,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    }
+  }
+}

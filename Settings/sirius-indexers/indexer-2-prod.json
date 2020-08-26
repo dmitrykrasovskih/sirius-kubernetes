@@ -1,0 +1,24 @@
+{
+  "Blockchains": {
+    "bitcoin": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 639700,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "litecoin": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 639700,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    }
+  }
+}
