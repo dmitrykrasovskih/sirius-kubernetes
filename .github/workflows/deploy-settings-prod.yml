@@ -15,15 +15,8 @@ jobs:
     - name: Build and publish Settings Server
       uses: swisschain/Publish-Docker-Github-Action@master
       with:
-        name: swisschains/settings-sirius
+        name: swisschains/settings-sirius-prod
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         workdir: ./Settings
         # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
-
-    - name: Restart Settings Server
-      uses: swisschain/kube-restart-pods@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        NAMESPACE: sirius
-        POD: settings
