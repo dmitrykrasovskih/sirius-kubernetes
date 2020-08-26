@@ -69,7 +69,7 @@ spec:
         - name: RemoteSettingsUrls__2
           value: "http://settings.sirius.svc.cluster.local/sirius-indexers/common"
         - name: RemoteSettingsUrls__3
-          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-5"
+          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-5-ENVIRONMENT_MODE"
       tolerations:
        - effect: NoSchedule
          operator: Exists
