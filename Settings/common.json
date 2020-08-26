@@ -18,4 +18,5 @@
     "NodeUrls": [ "http://elasticsearch.sirius-monitoring:9200" ],
     "IndexPrefixName": "sirius-logs"
   }
+
 }
