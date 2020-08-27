@@ -1,0 +1,10 @@
+{
+  "Node": {
+    "Url": "https://stellar-testnet.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "stellar-test",
+    "Name": "Stellar TestNet",
+    "NetworkType": "Test"
+  }
+}

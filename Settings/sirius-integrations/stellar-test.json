@@ -1,10 +1,10 @@
 {
   "Node": {
-    "Url": "https://horizon-testnet.stellar.org"
+    "Url": "https://horizon.stellar.org"
   },
   "Blockchain": {
-    "Id": "stellar-test",
-    "Name": "Stellar TestNet",
-    "NetworkType": "Test"
+    "Id": "stellar",
+    "Name": "Stellar MainNet",
+    "NetworkType": "Public"
   }
 }
