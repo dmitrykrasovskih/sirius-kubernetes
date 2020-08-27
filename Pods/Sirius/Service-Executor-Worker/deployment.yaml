@@ -54,10 +54,10 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 128Mi 
-            cpu: 40m 
-          limits:
             memory: 256Mi 
+            cpu: 100m 
+          limits:
+            memory: 512Mi 
             cpu: 1000m 
         env:
         - name: RemoteSettingsRequired
