@@ -1,6 +1,6 @@
 {
   "Node": {
-    "Url": "https://stellar-testnet.nodes.swisschain.io"
+    "Url": "https://horizon-testnet.stellar.org/"
   },
   "Blockchain": {
     "Id": "stellar-test",
