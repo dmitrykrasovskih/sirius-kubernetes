@@ -62,6 +62,11 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+        - name: ENVIRONMENT_MODE
+          valueFrom:
+            secretKeyRef:
+              name: settings
+              key: ENVIRONMENT_MODE
       tolerations:
        - effect: NoSchedule
          operator: Exists
