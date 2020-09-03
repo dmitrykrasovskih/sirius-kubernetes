@@ -4,5 +4,49 @@
   },
   "Auth": {
     "JwtSecret": "${JwtTokenSecret}"
+  },
+  "Redis": {
+    "ConnectionString": "redis.sirius.svc.cluster.local:6379",
+    "InstanceName": "RateApi"
+  },
+  "Brokerage": {
+    "Url": "http://brokerage.sirius.svc.cluster.local/"
+  },
+  "VaultAgent": {
+    "Url": "http://vault-agent.sirius.svc.cluster.local/"
+  },
+  "TenantRateLimiting": {
+    "EndpointWhitelist": [ "get:/api/isalive", "*:/swisschain.sirius.api.monitoring.MonitoringService/IsAlive" ],
+    "ClientPolicyPrefix": "tenant-prfx",
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "HttpStatusCode": 429,
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1m",
+        "Limit": 30
+      },
+      {
+        "Endpoint": "*",
+        "Period": "1h",
+        "Limit": 300
+      },
+      {
+        "Endpoint": "*",
+        "Period": "1d",
+        "Limit": 3000
+      },
+      {
+        "Endpoint": "*",
+        "Period": "30d",
+        "Limit": 30000
+      }
+    ],
+    "QuotaExceededResponse": {
+      "Content": "{{ \"message\": \"Whoa! Calm down, cowboy!\", \"details\": \"Quota exceeded. Maximum allowed: {0} per {1}. Please try again in {2} second(s).\" }}",
+      "ContentType": "application/json",
+      "StatusCode": 429
+    }
   }
 }
