@@ -1,0 +1,63 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    description: Redis
+  labels:
+    app: redis
+    environment: Production
+    tier: jobs
+  name: redis
+  namespace: sirius
+spec:
+  revisionHistoryLimit: 5
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+      name: redis
+    spec:
+      #tolerations:
+      #- effect: NoSchedule
+      #  operator: Exists
+      #nodeSelector:
+      #  type: SERVICES
+      containers:
+      - name: redis
+        image: redis:4.0
+        command: ["redis-server"]
+        args: ["--save \"\"", "--appendonly no"]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 6379
+        #securityContext:
+        #  privileged: true
+        #readinessProbe:
+        #  httpGet:
+        #    path: /api/isalive
+        #    port: 5000
+        #  initialDelaySeconds: 15
+        #  periodSeconds: 20
+        #livenessProbe:
+        #  httpGet:
+        #    path: /api/isalive
+        #    port: 5000
+        #  initialDelaySeconds: 15
+        #  periodSeconds: 20
+        resources:
+          requests:
+            memory: "600Mi"
+            cpu: 0.3
+          limits:
+            memory: "1024Mi"
+            cpu: 1
