@@ -33,7 +33,7 @@ spec:
         - name: RABBITMQ_DEFAULT_VHOST
           value: /
         - name: RABBITMQ_DEFAULT_USER
-          value: user.sirius
+          value: prod.sirius
         - name: RABBITMQ_VM_MEMORY_HIGH_WATERMARK
           value: "0.8"
         - name: RABBITMQ_DEFAULT_PASS
@@ -62,8 +62,8 @@ spec:
             memory: "1024Mi"
             cpu: 0.1
           limits:
-            memory: "1024Mi"
-            cpu: 1
+            memory: "2048Mi"
+            cpu: 2
         volumeMounts:
         - mountPath: /var/lib/rabbitmq/mnesia
           name: rabbit
