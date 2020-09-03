@@ -57,7 +57,7 @@ spec:
             memory: 128Mi 
             cpu: 140m 
           limits:
-            memory: 786Mi 
+            memory: 1024Mi 
             cpu: 1000m 
         env:
         - name: RemoteSettingsRequired
