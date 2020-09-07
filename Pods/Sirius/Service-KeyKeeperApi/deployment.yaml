@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Vault Api
+    description: KeyKeeperApi
   labels:
-    app: vault-api
+    app: key-keeper-api
     environment: Development
     tier: Service
-  name: vault-api
+  name: key-keeper-api
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -17,19 +17,19 @@ spec:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: vault-api
+      app: key-keeper-api
   template:
     metadata:
       labels:
-        app: vault-api
-      name: vault-api
+        app: key-keeper-api
+      name: key-keeper-api
     spec:
       containers:
-        - name: vault-api
-          image: docker.io/swisschains/sirius-vault-api:1.1.0
+        - name: key-keeper-api
+          image: docker.io/swisschains/sirius-key-keeper-api:1.0.0
           imagePullPolicy: Always
           lifecycle:
             postStart:
@@ -40,7 +40,6 @@ spec:
                   - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
           ports:
             - containerPort: 5000
-            - containerPort: 5001
           readinessProbe:
             httpGet:
               path: /api/isalive
@@ -66,9 +65,9 @@ spec:
             - name: RemoteSettingsUrls__1
               value: "http://settings.sirius.svc.cluster.local/sirius/common"
             - name: RemoteSettingsUrls__2
-              value: "http://settings.sirius.svc.cluster.local/sirius/vault-api"
+              value: "http://settings.sirius.svc.cluster.local/sirius/key-keeper-api"
       tolerations:
-       - effect: NoSchedule
-         operator: Exists
+        - effect: NoSchedule
+          operator: Exists
       nodeSelector:
         agentpool: sirius
