@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: docker.io/swisschains/universe-api:1.0.0
+        image: docker.io/swisschains/universe-api:1.1.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -65,6 +65,8 @@ spec:
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1
+          value: "http://settings.sirius.svc.cluster.local/universe/common"
+        - name: RemoteSettingsUrls__2
           value: "http://settings.sirius.svc.cluster.local/universe/api"
       tolerations:
        - effect: NoSchedule
