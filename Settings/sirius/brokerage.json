@@ -15,5 +15,13 @@
       "DesiredTextTagLength": 28,
       "DesiredMaxNumberTag": 9223372036854775807
     }
+  },
+   "Blockchains": {
+    "bitcoin-private": {
+      "MinDepositForConsolidation": 0.01
+    },
+    "litecoin-private": {
+      "MinDepositForConsolidation": 0.1
+    }
   }
 }
