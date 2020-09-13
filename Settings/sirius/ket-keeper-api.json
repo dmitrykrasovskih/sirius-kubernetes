@@ -1,0 +1,9 @@
+{
+  "Db": {
+    "ConnectionString": "${Sirius-KeyKeeperApi-DbConnectionString}"
+  },
+  "Auth": {
+    "JwtSecret": "${JwtTokenSecret}",
+    "Audience": "sirius.swisschain.io"
+  }
+} 

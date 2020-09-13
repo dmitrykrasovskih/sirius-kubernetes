@@ -4,5 +4,29 @@
   },
   "Auth": {
     "JwtSecret": "${JwtTokenSecret}"
+  },
+  "Redis": {
+    "ConnectionString": "redis.sirius.svc.cluster.local:6379",
+    "InstanceName": "RateLimits"
+  },
+  "TenantRateLimiting": {
+    "Streams": 2,
+    "EndpointWhitelist": [ "get:/api/isalive", "*:/swisschain.sirius.api.monitoring.MonitoringService/IsAlive" ],
+    "ClientPolicyPrefix": "tenant-prfx",
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "HttpStatusCode": 429,
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1m",
+        "Limit": 60
+      }
+    ],
+    "QuotaExceededResponse": {
+      "Content": "{{ \"message\": \"Requests rate limit reached\", \"details\": \"Quota exceeded. Maximum allowed: {0} per {1}. Please try again in {2} second(s).\" }}",
+      "ContentType": "application/json",
+      "StatusCode": 429
+    }
   }
 }

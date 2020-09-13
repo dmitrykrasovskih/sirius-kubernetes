@@ -3,7 +3,8 @@
     "ConnectionString": "${Sirius-VaultApi-DbConnectionString}"
   },
   "Auth": {
-    "JwtSecret": "${JwtTokenSecret}"
+    "JwtSecret": "${JwtTokenSecret}",
+    "Audience": "sirius.swisschain.io"
   },
   "VaultAgent": {
     "Url": "http://vault-agent.sirius.svc.cluster.local/"

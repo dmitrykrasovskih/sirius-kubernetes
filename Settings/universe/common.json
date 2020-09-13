@@ -1,0 +1,10 @@
+{
+  "TenantsClient": {
+    "ServiceAddress": "http://tenants.universe.svc.cluster.local:5001/"
+  },
+  "RabbitMq": {
+    "HostUrl": "rabbit.sirius.svc.cluster.local",
+    "Username": "${Sirius-Rabbit-User}",
+    "Password": "${Sirius-Rabbit-Password}"
+  }
+} 
