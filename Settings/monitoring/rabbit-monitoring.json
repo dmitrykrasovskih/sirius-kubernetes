@@ -1,0 +1,33 @@
+{
+  "RabbitMqMonitoringJob": {
+    "Db": {
+      "LogsConnString": "${Sirius-Rabbit-Monitoring-Logs}"
+    },
+    "RabbitMqConnections": [
+      {
+        "Title": "rabbit-sirius",
+        "Url": "rabbit.sirius",
+        "Username": "user.sirius",
+        "Password": "user.sirius",
+        "Queues": {
+          "sirius-executor-transaction-confirmed_error": {
+            "MaxMessagesCount": 600
+          },
+          "sirius-api-block-updates_error": {
+            "MaxMessagesCount": 300
+          }
+        }
+      }
+    ],
+    "CheckRate": "00:05",
+    "MaxMessagesCount": 100
+  },
+  "SlackNotifications": {
+    "AzureQueue":
+    {
+      "ConnectionString": "${Sirius-Slack-Noifications}",
+      "QueueName": "slack-notifications"
+    },
+    "ThrottlingLimitSeconds": 60
+  }
+}

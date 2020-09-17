@@ -1,0 +1,40 @@
+{
+  "SlackIntegration": 
+  {
+    "Channels": 
+    [
+      {
+        "Type": "Errors",
+        "WebHookUrl": "${Sirius-Slack-Key}",
+        "Opsgenie": true
+      },
+      {
+        "Type": "Monitor",
+        "WebHookUrl": "${Sirius-Slack-Key}",
+        "Opsgenie": true
+      }
+    ],
+    "Env": ""
+  },
+  "SlackNotifications": 
+  {
+    "AzureQueue": 
+    {
+      "ConnectionString": "${Sirius-Slack-Noifications}",
+      "QueueName": "slack-notifications"
+    },
+    "ThrottlingLimitSeconds": 60
+  },
+  "SlackNotificationsJobSettings": 
+  {
+    "LogsConnectionString": "${Sirius-Slack-Noifications}",
+    "SharedStorageConnString": "${Sirius-Slack-Noifications}",
+    "ForwardMonitorMessagesQueueConnString": "${Sirius-Slack-Noifications}",
+    "FullMessagesConnString": "${Sirius-Slack-Noifications}",
+    "MutedMessagePrefixes": 
+    {
+    },
+    "OpsgenieHost": "https://api.eu.opsgenie.com/v2/alerts",
+    "OpsgenieApiKey": "${Sirius-Opsgenie-Key}"
+  }
+}
