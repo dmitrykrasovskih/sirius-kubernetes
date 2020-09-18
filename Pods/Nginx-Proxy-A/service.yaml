@@ -54,6 +54,10 @@ spec:
     port: 200
     protocol: TCP
     targetPort: 200
+  - name: "bch-explorer"
+    port: 210
+    protocol: TCP
+    targetPort: 210
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
