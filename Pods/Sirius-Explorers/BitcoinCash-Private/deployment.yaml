@@ -4,10 +4,10 @@ metadata:
   annotations:
     description: BitcoinCash Explorer
   labels:
-    app: bch-explorer
+    app: bitcoincash-private
     environment: Test
     tier: Service
-  name: bch-explorer
+  name: bitcoincash-private
   namespace: sirius-explorers
 spec:
   revisionHistoryLimit: 1
@@ -20,15 +20,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bch-explorer
+      app: bitcoincash-private
   template:
     metadata:
       labels:
-        app: bch-explorer
-      name: bch-explorer
+        app: bitcoincash-private
+      name: bitcoincash-private
     spec:
       containers:
-      - name: bch-explorer
+      - name: bitcoincash-private
         image: oktapodia/btc-rpc-explorer
         imagePullPolicy: Always
         lifecycle:

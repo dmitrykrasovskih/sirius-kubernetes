@@ -54,7 +54,7 @@ spec:
     port: 200
     protocol: TCP
     targetPort: 200
-  - name: "bch-explorer"
+  - name: "bitcoincash-private"
     port: 210
     protocol: TCP
     targetPort: 210
