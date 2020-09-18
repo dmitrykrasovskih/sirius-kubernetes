@@ -7,14 +7,56 @@
       {
         "Title": "rabbit-sirius",
         "Url": "rabbit.sirius",
-        "Username": "user.sirius",
-        "Password": "user.sirius",
+        "Username": "${Sirius-Rabbit-User}",
+        "Password": "${Sirius-Rabbit-Password}",
         "Queues": {
           "sirius-executor-transaction-confirmed_error": {
             "MaxMessagesCount": 600
           },
           "sirius-api-block-updates_error": {
             "MaxMessagesCount": 300
+          },
+          "sirius-api-asset-updates_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-api-block-updates_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-api-deposit-updates_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-api-withdrawal-updates_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-brokerage-asset-added_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-brokerage-finalize-broker-account-creation_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-brokerage-operation-failure_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-brokerage-transaction-confirmation_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-brokerage-transaction-detection_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-confirmator-transaction-detected_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-executor-execute-transfer_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-executor-execute-transfer_error_skipped": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-executor-transaction-confirmed_error": {
+            "MaxMessagesCount": 1
+          },
+          "sirius-executor-transaction-signed_error": {
+            "MaxMessagesCount": 1
           }
         }
       }
