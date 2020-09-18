@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: BitcoinCash Explorer
+  labels:
+    app: bch-explorer
+    environment: Test
+    tier: Service
+  name: bch-explorer
+  namespace: sirius-explorers
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bch-explorer
+  template:
+    metadata:
+      labels:
+        app: bch-explorer
+      name: bch-explorer
+    spec:
+      containers:
+      - name: bch-explorer
+        image: oktapodia/btc-rpc-explorer
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 5000
+        - containerPort: 5001
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3002
+          initialDelaySeconds: 40
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3002
+          initialDelaySeconds: 40
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: 64Mi 
+            cpu: 40m 
+          limits:
+            memory: 128Mi 
+            cpu: 500m 
+        env:
+        - name: RPC_USER
+          valueFrom:
+            secretKeyRef:
+              name: bitcoin-cash-private
+              key: BITCOIN_CASH_RPC_USER
+        - name: RPC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: bitcoin-cash-private
+              key: BITCOIN_CASH_RPC_PASS
+        - name: RPC_HOST 
+          value: "bitcoincash-regtest.nodes.swisschain.io"
+        - name: RPC_PORT
+          value: "80"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+        agentpool: sirius
