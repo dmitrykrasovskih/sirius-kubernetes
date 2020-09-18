@@ -65,6 +65,11 @@ data:
   #  options ndots:5	
 
   default.stream: |
+    # bitcoincash-explorer
+    server {
+      listen 210;
+      proxy_pass bch-private.sirius-explorers:80;
+    }
     # vault-api
     server {
       listen 200;
