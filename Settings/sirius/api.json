@@ -16,7 +16,7 @@
     "Url": "http://vault-agent.sirius.svc.cluster.local/"
   },
   "TenantRateLimiting": {
-    "Streams ": 2,
+    "Streams": 2,
     "EndpointWhitelist": [ "get:/api/isalive", "*:/swisschain.sirius.api.monitoring.MonitoringService/IsAlive" ],
     "ClientPolicyPrefix": "tenant-prfx",
     "EnableEndpointRateLimiting": true,

@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: executor-worker
-        image: docker.io/swisschains/sirius-executor-worker:0.0.9
+        image: docker.io/swisschains/sirius-executor-worker:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -57,7 +57,7 @@ spec:
             memory: 256Mi 
             cpu: 100m 
           limits:
-            memory: 1024Mi 
+            memory: 2048Mi 
             cpu: 1000m 
         env:
         - name: RemoteSettingsRequired
