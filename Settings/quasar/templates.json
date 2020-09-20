@@ -1,21 +1,12 @@
 {
   "Templates": {
     "Db": {
-      "ConnectionString": "${QuasarTemplatesConnectionString}"
+      "ConnectionString": "${Quasar-Templates-DbConnectionString}"
     },
     "DefaultLanguage": "en-US"
   },
   "Jwt": {
     "Audience": "swisschain.io",
     "Secret": "${JwtTokenSecret}"
-  },
-  "Serilog": {
-    "minimumLevel": {
-      "default": "Debug",
-      "override": {
-        "Microsoft": "Debug",
-        "System": "Debug"
-      }
-    }
   }
 }

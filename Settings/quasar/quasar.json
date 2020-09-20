@@ -2,20 +2,18 @@
   "MessageSenderJobDelay": "00:00:01",
   "ProviderManagerDelay": "00:00:10",
   "Context" : {
-    "email": "${QuasarContextEmail}",
-    "phone": "${QuasarContextPhone}",
-    "language": "en-US" 
+    "language": "en-US"
   },
   "Db": {
-    "ConnectionString": "${QuasarConnectionString}"
+    "ConnectionString": "${Quasar-DbConnectionString}"
   },
   "RabbitMq": {
-    "HostUrl": "${ExchangeRabbitMqHostUrl}",
-    "Username": "${ExchangeRabbitUser}",
-    "Password": "${ExchangeRabbitPassword}"
+    "HostUrl": "empty",
+    "Username": "empty",
+    "Password": "empty"
   },
   "TemplatesService": {
-    "Url": "${Quasar.Templates.Grpc.ConnectionUrl}"
+    "Url": "http://templates.quasar.svc.cluster.local:5001"
   },
   "Jwt": {
     "Audience": "swisschain.io",
