@@ -1,0 +1,26 @@
+{
+  "MessageSenderJobDelay": "00:00:01",
+  "ProviderManagerDelay": "00:00:10",
+  "Context" : {
+    "email": "${QuasarContextEmail}",
+    "phone": "${QuasarContextPhone}",
+    "language": "en-US" 
+  },
+  "Db": {
+    "ConnectionString": "${QuasarConnectionString}"
+  },
+  "RabbitMq": {
+    "HostUrl": "${ExchangeRabbitMqHostUrl}",
+    "Username": "${ExchangeRabbitUser}",
+    "Password": "${ExchangeRabbitPassword}"
+  },
+  "TemplatesService": {
+    "Url": "${Quasar.Templates.Grpc.ConnectionUrl}"
+  },
+  "Jwt": {
+    "Audience": "swisschain.io",
+    "Secret": "${JwtTokenSecret}"
+  },
+  "InternalTenantId": "00000000-0000-0000-0000-000000000000",
+  "ResourcesUrl": "https://universe-test.swisschain.info"
+}
