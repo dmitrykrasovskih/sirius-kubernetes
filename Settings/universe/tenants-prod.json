@@ -13,6 +13,6 @@
   },
   "Notification": {
     "EmailVerificationEmailTemplateName": "email-confirmation",
-    "EmailVerificationUrlTemplate": "https://universe.swisschain.io/auth/email-confirmation?code={0}"
+    "EmailVerificationUrlTemplate": "https://universe-test.swisschain.info/auth/email-confirmation?code={0}"
   }
 }
