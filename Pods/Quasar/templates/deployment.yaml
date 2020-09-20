@@ -64,8 +64,3 @@ spec:
           value: "http://settings.common.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
           value: "http://settings.common.svc.cluster.local/quasar/templates"
-      tolerations:
-       - effect: NoSchedule
-         operator: Exists
-      nodeSelector:
-          agentpool: quasar
