@@ -68,4 +68,4 @@ spec:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: universe
+          agentpool: quasar
