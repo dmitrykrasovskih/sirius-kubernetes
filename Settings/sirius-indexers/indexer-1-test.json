@@ -20,6 +20,26 @@
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
+    "bitcoin-cash-private": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 9983,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "bitcoin-cash-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1411000,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
     "litecoin-private": {
       "Db": {
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
