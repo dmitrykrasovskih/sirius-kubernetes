@@ -4,8 +4,8 @@
   },
   "Blockchains":
   {
-    "bitcoin": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount } },
-  "bitcoin-test": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Test-RequiredConfirmationsCount } },
+    "bitcoin": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount} },
+  "bitcoin-test": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Test-RequiredConfirmationsCount} },
     "bitcoin-private" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Private-RequiredConfirmationsCount} },
     
     "litecoin" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Litecoin-RequiredConfirmationsCount} },
