@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-BitcoinCash-NodeUser}",
+    "Password": "${SiriusIntegrations-BitcoinCash-NodePassword}",
+    "Url": "https://bitcoincash.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-cash",
+    "Name": "BitcoinCash Mainnet",
+    "NetworkType": "Public"
+  }
+}

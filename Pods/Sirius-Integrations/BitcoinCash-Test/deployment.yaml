@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Shared Vault Worker
+    description: BitcoinCash Test
   labels:
-    app: shared-vault-worker
+    app: bitcoin-cash-test
     environment: Development
     tier: Service
-  name: shared-vault-worker
-  namespace: sirius
+  name: bitcoin-cash-test
+  namespace: sirius-integrations
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shared-vault-worker
+      app: bitcoin-cash-test
   template:
     metadata:
       labels:
-        app: shared-vault-worker
-      name: shared-vault-worker
+        app: bitcoin-cash-test
+      name: bitcoin-cash-test
     spec:
       containers:
-      - name: shared-vault-worker
-        image: docker.io/swisschains/sirius-simple-vault-worker:1.2.0
+      - name: bitcoin-cash-test
+        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,6 +40,7 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
+        - containerPort: 5001
         readinessProbe:
           httpGet:
             path: /api/isalive
@@ -54,20 +55,20 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 64Mi 
-            cpu: 40m 
+            memory: 128Mi
+            cpu: 100m
           limits:
-            memory: 128Mi 
-            cpu: 500m 
+            memory: 256Mi
+            cpu: 700m
         env:
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
+        - name: RemoteSettingsUrls__1
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/shared-vault"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin-cash-test"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-        agentpool: sirius
+        agentpool: sirintegrat

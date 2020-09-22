@@ -6,6 +6,10 @@
     "http://bitcoin.sirius-integrations.svc.cluster.local",
     "http://bitcoin-test.sirius-integrations.svc.cluster.local",
     "http://bitcoin-private.sirius-integrations.svc.cluster.local",
+
+    "http://bitcoin-cash.sirius-integrations.svc.cluster.local",
+    "http://bitcoin-cash-test.sirius-integrations.svc.cluster.local",
+    "http://bitcoin-cash-private.sirius-integrations.svc.cluster.local",
     
     "http://litecoin.sirius-integrations.svc.cluster.local",
     "http://litecoin-test.sirius-integrations.svc.cluster.local",
@@ -15,6 +19,6 @@
     "http://ethereum-ropsten.sirius-integrations.svc.cluster.local",
     
     "http://stellar.sirius-integrations.svc.cluster.local",
-    "http://stellar-test.sirius-integrations.svc.cluster.local"
+    "http://stellar-test.sirius-integrations.svc.cluster.local",
   ]
 }

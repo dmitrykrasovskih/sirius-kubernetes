@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Shared Vault Worker
+    description: indexer-worker-6
   labels:
-    app: shared-vault-worker
+    app: indexer-worker-6
     environment: Development
     tier: Service
-  name: shared-vault-worker
-  namespace: sirius
+  name: indexer-worker-6
+  namespace: sirius-indexers
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shared-vault-worker
+      app: indexer-worker-6
   template:
     metadata:
       labels:
-        app: shared-vault-worker
-      name: shared-vault-worker
+        app: indexer-worker-6
+      name: indexer-worker-6
     spec:
       containers:
-      - name: shared-vault-worker
-        image: docker.io/swisschains/sirius-simple-vault-worker:1.2.0
+      - name: indexer-worker-6
+        image: docker.io/swisschains/sirius-indexer-worker:1.3.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -54,20 +54,24 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 64Mi 
-            cpu: 40m 
-          limits:
-            memory: 128Mi 
+            memory: 256Mi 
             cpu: 500m 
+          limits:
+            memory: 2048Mi 
+            cpu: 2000m
         env:
+        - name: RemoteSettingsRequired
+          value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
+        - name: RemoteSettingsUrls__1
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/shared-vault"
+          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/common"
+        - name: RemoteSettingsUrls__3
+          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-6-ENVIRONMENT_MODE"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-        agentpool: sirius
+        agentpool: sirindexers
