@@ -58,6 +58,10 @@ spec:
     port: 210
     protocol: TCP
     targetPort: 210
+  - name: "key-keeper-api"
+    port: 220
+    protocol: TCP
+    targetPort: 220
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
