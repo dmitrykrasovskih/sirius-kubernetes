@@ -1,0 +1,24 @@
+{
+  "MessageSenderJobDelay": "00:00:01",
+  "ProviderManagerDelay": "00:00:10",
+  "Context" : {
+    "language": "en-US"
+  },
+  "Db": {
+    "ConnectionString": "${Quasar-DbConnectionString}"
+  },
+  "RabbitMq": {
+    "HostUrl": "empty",
+    "Username": "empty",
+    "Password": "empty"
+  },
+  "TemplatesService": {
+    "Url": "http://templates.quasar.svc.cluster.local:5001"
+  },
+  "Jwt": {
+    "Audience": "swisschain.io",
+    "Secret": "${JwtTokenSecret}"
+  },
+  "InternalTenantId": "00000000-0000-0000-0000-000000000000",
+  "ResourcesUrl": "https://universe-test.swisschain.info"
+}

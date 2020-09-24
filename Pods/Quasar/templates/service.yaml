@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: templates
+    environment: Development
+  name: templates
+  namespace: quasar
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 5000
+  - name: grpc
+    port: 5001
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: templates
+  sessionAffinity: None
+  type: ClusterIP

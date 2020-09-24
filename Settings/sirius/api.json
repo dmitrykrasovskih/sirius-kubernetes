@@ -9,12 +9,6 @@
     "ConnectionString": "redis.sirius.svc.cluster.local:6379",
     "InstanceName": "RateApi"
   },
-  "Brokerage": {
-    "Url": "http://brokerage.sirius.svc.cluster.local/"
-  },
-  "VaultAgent": {
-    "Url": "http://vault-agent.sirius.svc.cluster.local/"
-  },
   "TenantRateLimiting": {
     "Streams": 2,
     "EndpointWhitelist": [ "get:/api/isalive", "*:/swisschain.sirius.api.monitoring.MonitoringService/IsAlive" ],

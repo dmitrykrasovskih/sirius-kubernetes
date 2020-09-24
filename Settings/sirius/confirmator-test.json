@@ -4,8 +4,8 @@
   },
   "Blockchains":
   {
-    "bitcoin" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount} },
-    "bitcoin-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Test-RequiredConfirmationsCount} },
+    "bitcoin": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount} },
+  "bitcoin-test": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Test-RequiredConfirmationsCount} },
     "bitcoin-private" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-Private-RequiredConfirmationsCount} },
     
     "litecoin" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Litecoin-RequiredConfirmationsCount} },
@@ -16,6 +16,9 @@
     "ethereum-ropsten" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Ethereum-Ropsten-RequiredConfirmationsCount} },
     
     "stellar" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-RequiredConfirmationsCount} },
-    "stellar-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-Test-RequiredConfirmationsCount} }
+    "stellar-test": { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-Test-RequiredConfirmationsCount} },
+    "bitcoin-cash" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount} },
+    "bitcoin-cash-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinCash-Test-RequiredConfirmationsCount} },
+    "bitcoin-cash-private" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinCash-Private-RequiredConfirmationsCount} }
   }
 }

@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Brokerage
-  labels:
-    app: brokerage
+    description: templates
+  labels: 
+    app: templates
     environment: Development
     tier: Service
-  name: brokerage
-  namespace: sirius
+  name: templates
+  namespace: quasar
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -17,19 +17,19 @@ spec:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: brokerage
+      app: templates
   template:
     metadata:
       labels:
-        app: brokerage
-      name: brokerage
+        app: templates
+      name: templates
     spec:
       containers:
-      - name: brokerage
-        image: docker.io/swisschains/sirius-brokerage:1.1.4
+      - name: templates
+        image: docker.io/swisschains/quasar-templates:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,7 +40,6 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
-        - containerPort: 5001
         readinessProbe:
           httpGet:
             path: /api/isalive
@@ -61,16 +60,7 @@ spec:
             memory: 128Mi 
             cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
-      tolerations:
-       - effect: NoSchedule
-         operator: Exists
-      nodeSelector:
-          agentpool: sirius
+          value: "http://settings.sirius.svc.cluster.local/quasar/templates"

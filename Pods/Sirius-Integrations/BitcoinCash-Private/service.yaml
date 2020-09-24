@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bitcoin-cash-private
+    environment: Development
+  name: bitcoin-cash-private
+  namespace: sirius-integrations
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  - name: grpc
+    port: 80
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: bitcoin-cash-private
+  sessionAffinity: None
+  type: ClusterIP

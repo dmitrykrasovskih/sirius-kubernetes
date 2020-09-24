@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Brokerage
+    description: BitcoinCash Private
   labels:
-    app: brokerage
+    app: bitcoin-cash-private
     environment: Development
     tier: Service
-  name: brokerage
-  namespace: sirius
+  name: bitcoin-cash-private
+  namespace: sirius-integrations
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -17,19 +17,19 @@ spec:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: brokerage
+      app: bitcoin-cash-private
   template:
     metadata:
       labels:
-        app: brokerage
-      name: brokerage
+        app: bitcoin-cash-private
+      name: bitcoin-cash-private
     spec:
       containers:
-      - name: brokerage
-        image: docker.io/swisschains/sirius-brokerage:1.1.4
+      - name: bitcoin-cash-private
+        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -55,22 +55,20 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 64Mi 
-            cpu: 40m 
+            memory: 128Mi
+            cpu: 100m
           limits:
-            memory: 128Mi 
-            cpu: 500m 
+            memory: 256Mi
+            cpu: 700m
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
+        - name: RemoteSettingsUrls__1
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
+          value: "http://settings.sirius.svc.cluster.local/sirius-integrations/bitcoin-cash-private"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirintegrat

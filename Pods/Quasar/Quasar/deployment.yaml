@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: 
   annotations:
-    description: Brokerage
+    description: Quasar
   labels:
-    app: brokerage
+    app: quasar
     environment: Development
     tier: Service
-  name: brokerage
-  namespace: sirius
+  name: quasar
+  namespace: quasar
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -17,19 +17,19 @@ spec:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: brokerage
+      app: quasar
   template:
     metadata:
       labels:
-        app: brokerage
-      name: brokerage
+        app: quasar
+      name: quasar
     spec:
       containers:
-      - name: brokerage
-        image: docker.io/swisschains/sirius-brokerage:1.1.4
+      - name: quasar
+        image: docker.io/swisschains/quasar:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -61,16 +61,7 @@ spec:
             memory: 128Mi 
             cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
-      tolerations:
-       - effect: NoSchedule
-         operator: Exists
-      nodeSelector:
-          agentpool: sirius
+        - name: RemoteSettingsUrls__1
+          value: "http://settings.sirius.svc.cluster.local/quasar/quasar"

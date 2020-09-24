@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: tenants
-        image: docker.io/swisschains/universe-tenants:1.1.0
+        image: docker.io/swisschains/universe-tenants:1.2.0
         imagePullPolicy: Always
         lifecycle:
           postStart:

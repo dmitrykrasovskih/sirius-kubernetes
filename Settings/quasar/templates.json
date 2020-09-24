@@ -1,0 +1,12 @@
+{
+  "Templates": {
+    "Db": {
+      "ConnectionString": "${Quasar-Templates-DbConnectionString}"
+    },
+    "DefaultLanguage": "en-US"
+  },
+  "Jwt": {
+    "Audience": "swisschain.io",
+    "Secret": "${JwtTokenSecret}"
+  }
+}
