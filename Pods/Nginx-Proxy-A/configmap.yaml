@@ -65,6 +65,11 @@ data:
   #  options ndots:5	
 
   default.stream: |
+    # key-keeper-api
+    server {
+      listen 220;
+      proxy_pass key-keeper-api:80;
+    }
     # bitcoincash-private
     server {
       listen 210;
