@@ -68,7 +68,7 @@ data:
     # key-keeper-api
     server {
       listen 220;
-      proxy_pass key-keeper-api:80;
+      proxy_pass key-keeper-api.sirius:80;
     }
     # bitcoincash-private
     server {
