@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: indexer-worker-5
+    app: indexer-worker-6
     environment: Development
-  name: indexer-worker-5
+  name: indexer-worker-6
   namespace: sirius-indexers
 spec:
   ports:
@@ -13,6 +13,6 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: indexer-worker-5
+    app: indexer-worker-6
   sessionAffinity: None
   type: ClusterIP
