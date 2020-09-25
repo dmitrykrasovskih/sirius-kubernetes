@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: tenants
-        image: docker.io/swisschains/universe-tenants:1.1.0
+        image: docker.io/swisschains/universe-tenants:1.2.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -67,7 +67,7 @@ spec:
         - name: RemoteSettingsUrls__1
           value: "http://settings.sirius.svc.cluster.local/universe/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/universe/tenants"
+          value: "http://settings.sirius.svc.cluster.local/universe/tenants-ENVIRONMENT_MODE"
       tolerations:
        - effect: NoSchedule
          operator: Exists

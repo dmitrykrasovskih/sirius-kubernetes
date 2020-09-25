@@ -21,6 +21,10 @@
     "bitcoin-test": { "MinDepositForConsolidation": 0.001 },
     "bitcoin-private": { "MinDepositForConsolidation": 0.01 },
     
+    "bitcoin-cash": { "MinDepositForConsolidation": 0.0001 },
+    "bitcoin-cash-test": { "MinDepositForConsolidation": 0.00001 },
+    "bitcoin-cash-private": { "MinDepositForConsolidation": 0.01 },
+    
     "litecoin" : { "MinDepositForConsolidation": 0.04 },
     "litecoin-test" : { "MinDepositForConsolidation": 0.04 },
     "litecoin-private": { "MinDepositForConsolidation": 0.02 },

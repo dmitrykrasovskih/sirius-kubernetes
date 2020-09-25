@@ -8,6 +8,9 @@
   "VaultAgent": {
     "Url": "http://vault-agent.sirius.svc.cluster.local/"
   },
+  "Indexer": {
+    "Url": "http://indexer.sirius-indexers.svc.cluster.local/"
+  },
   "RabbitMq": {
     "HostUrl": "rabbit.sirius.svc.cluster.local",
     "Username": "${Sirius-Rabbit-User}",

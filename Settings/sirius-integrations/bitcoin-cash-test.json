@@ -1,0 +1,12 @@
+{
+  "Node": {
+    "User": "${SiriusIntegrations-BitcoinCash-Test-NodeUser}",
+    "Password": "${SiriusIntegrations-BitcoinCash-Test-NodePassword}",
+    "Url": "https://bitcoincash-testnet.nodes.swisschain.io"
+  },
+  "Blockchain": {
+    "Id": "bitcoin-cash-test",
+    "Name": "BitcoinCash Test network",
+    "NetworkType": "Test"
+  }
+}

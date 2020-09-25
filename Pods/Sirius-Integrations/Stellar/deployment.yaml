@@ -28,8 +28,8 @@ spec:
       name: stellar
     spec:
       containers:
-      - name: bitcoin-test
-        image: docker.io/swisschains/sirius-integrations-stellar:1.2.9
+      - name: stellar
+        image: docker.io/swisschains/sirius-integrations-stellar:1.2.10
         imagePullPolicy: Always
         lifecycle:
           postStart:

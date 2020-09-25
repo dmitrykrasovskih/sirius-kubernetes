@@ -13,6 +13,9 @@
     "http://ethereum-ropsten.sirius-integrations.svc.cluster.local",
     
     "http://stellar.sirius-integrations.svc.cluster.local",
-    "http://stellar-test.sirius-integrations.svc.cluster.local"
+    "http://stellar-test.sirius-integrations.svc.cluster.local",
+    
+    "http://bitcoin-cash.sirius-integrations.svc.cluster.local",
+    "http://bitcoin-cash-test.sirius-integrations.svc.cluster.local"
   ]
 }
