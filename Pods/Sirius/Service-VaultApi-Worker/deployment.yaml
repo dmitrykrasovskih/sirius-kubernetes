@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: vault-api-worker
-          image: docker.io/swisschains/sirius-vault-api-worker:1.1.0
+          image: docker.io/swisschains/sirius-vault-api-worker:1.1.2
           imagePullPolicy: Always
           lifecycle:
             postStart:

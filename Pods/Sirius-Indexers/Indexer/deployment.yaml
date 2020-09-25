@@ -80,7 +80,7 @@ spec:
         - name: RemoteSettingsUrls__7
           value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-5-ENVIRONMENT_MODE"
         - name: RemoteSettingsUrls__8
-          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-6-ENVIRONMENT_MODE"
+          value: "http://settings.sirius.svc.cluster.local/sirius-indexers/indexer-6-ENVIRONMENT_MODE"          
       tolerations:
        - effect: NoSchedule
          operator: Exists
