@@ -16,7 +16,7 @@
     "stellar" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-RequiredConfirmationsCount} },
     "stellar-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Stellar-Test-RequiredConfirmationsCount} },
 
-    "bitcoin-cash" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-Bitcoin-RequiredConfirmationsCount} },
+    "bitcoin-cash" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinCash-RequiredConfirmationsCount} },
     "bitcoin-cash-test" : { "RequiredConfirmationsCount": ${Sirius-Confirmator-BitcoinCash-Test-RequiredConfirmationsCount} }
   }
 }
