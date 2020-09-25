@@ -39,6 +39,16 @@
         "LastHistoricalBlockNumber": 459746,
         "DelayOnBlockNotFound": "00:00:01"
       }
+    },
+    "bitcoin-cash-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1411446,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
     }    	
   }
 }
