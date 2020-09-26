@@ -6,7 +6,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 645534,
+        "LastHistoricalBlockNumber": 650042,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -16,7 +16,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1901928,
+        "LastHistoricalBlockNumber": 1919424,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }

@@ -6,7 +6,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1826741,
+        "LastHistoricalBlockNumber": 1836088,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -16,7 +16,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1595782,
+        "LastHistoricalBlockNumber": 1616816,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -26,7 +26,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 8574858,
+        "LastHistoricalBlockNumber": 8758660,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -36,7 +36,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 459746,
+        "LastHistoricalBlockNumber": 934326,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -46,7 +46,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1411446,
+        "LastHistoricalBlockNumber": 1411549,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }    	
