@@ -19,6 +19,6 @@
     "Audience": "quazar.swisschain.io",
     "Secret": "${Quazar-JwtTokenSecret}"
   },
-  "InternalTenantId": "{Quasar-InternalTenantId}",
+  "InternalTenantId": "${Quasar-InternalTenantId}",
   "ResourcesUrl": "https://universe.swisschain.io"
 }
