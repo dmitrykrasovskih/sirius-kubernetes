@@ -67,7 +67,7 @@ spec:
             cpu: 500m
         env:
         - name: VAULT_CONFIG
-          value: "http://settings.sirius.svc.cluster.local/guardian-shared"
+          value: "http://settings.sirius.svc.cluster.local/siruis/guardian-shared"
         - name: JAVA_OPTS
           value: "-Xms64m -Xmx128m"
       tolerations:
