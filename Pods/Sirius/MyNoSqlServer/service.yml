@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynosqlserver
+  namespace: sirius
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5123
+      protocol: "TCP"
+      targetPort: 5123
+      name: "5123"
+    - port: 5125
+      targetPort: 5125
+      protocol: "TCP"
+      name: "5125"
+  selector:
+    app: mynosqlserver

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynosqlserver
+  namespace: sirius
+spec:
+  revisionHistoryLimit: 5
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mynosqlserver
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mynosqlserver
+      name: mynosqlserver
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - image: myjettools/my-nosql-server:1.0.29
+          name: mynosqlserver
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5123
+              protocol: TCP
+            - containerPort: 5125
+              protocol: TCP
+          securityContext:
+            privileged: true
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: 0.1
+            limits:
+              memory: "512Mi"
+              cpu: 1
+          env:
+            - name: BackupAzureConnectString
+              valueFrom:
+                secretKeyRef:
+                  name: mynosqlserver
+                  key: ConnectionString            
+
