@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    description: Vault Guardian Shared
+  labels:
+    app: vault-guardian-shared
+    environment: Development
+    tier: Service
+  name: vault-guardian-shared
+  namespace: sirius
+spec:
+  revisionHistoryLimit: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault-guardian-shared
+  template:
+    metadata:
+      labels:
+        app: vault-guardian-shared
+      name: vault-guardian-shared
+    spec:
+      containers:
+      - name: vault-guardian-shared
+        image: docker.io/swisschains/sirius-vault-guardian:1.0.0
+        imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+             command:
+             - /bin/sh
+             - -c 
+             - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 20
+          successThreshold: 1
+          failureThreshold: 5
+        livenessProbe:
+          httpGet:
+            path: /api/isalive
+            port: 5000
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 40m
+          limits:
+            memory: 500Mi
+            cpu: 500m
+        env:
+        - name: VAULT_CONFIG
+          value: "http://settings.sirius.svc.cluster.local/guardian-shared"
+        - name: JAVA_OPTS
+          value: "-Xms64m -Xmx128m"
+      tolerations:
+       - effect: NoSchedule
+         operator: Exists
+      nodeSelector:
+        agentpool: sirius
