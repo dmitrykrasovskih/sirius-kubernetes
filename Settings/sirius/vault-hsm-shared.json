@@ -1,0 +1,22 @@
+{
+  "instanceName": "Sirius.Vault.Hsm.Shared",
+  "hsmConfig": {
+    "iamEndpoint": "https://iam.cloud.ibm.com/identity/token",
+    "iamToken": "${Sirius-Vault-Hsm-Shared-IamToken}",
+    "bluemixInstance": "${Sirius-Vault-Hsm-Shared-BluemixInstance}",
+    "hsmHost": "129.34.32.66",
+    "hsmPort": 9878
+  },
+  "db": {
+    "url": "${Sirius-Vault-Hsm-Shared-Db-Url}",
+    "user": "${Sirius-Vault-Hsm-Shared-Db-User}",
+    "password": "${Sirius-Vault-Hsm-Shared-Db-Password}",
+    "schema": "vault_hsm"
+  },
+  "vaultApi": {
+    "host": "vault-api.sirius.svc.cluster.local",
+    "port": 80,
+    "ssl": false,
+    "apiKey": "${Sirius-Vault-Hsm-Shared-VaultApiKey}"
+  }
+}
