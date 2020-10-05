@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Brokerage
+    description: HSM Vault Shared
   labels:
-    app: brokerage-worker
+    app: vault-hsm-shared
     environment: Development
     tier: Service
-  name: brokerage-worker
+  name: vault-hsm-shared
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: brokerage-worker
+      app: vault-hsm-shared
   template:
     metadata:
       labels:
-        app: brokerage-worker
-      name: brokerage-worker
+        app: vault-hsm-shared
+      name: vault-hsm-shared
     spec:
       containers:
-      - name: brokerage-worker
-        image: docker.io/swisschains/sirius-brokerage-worker:1.3.0
+      - name: vault-hsm-shared
+        image: docker.io/swisschains/sirius-vault-hsm:1.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -44,34 +44,34 @@ spec:
           httpGet:
             path: /api/isalive
             port: 5000
-          initialDelaySeconds: 40
-          periodSeconds: 10
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 20
+          successThreshold: 1
+          failureThreshold: 5
         livenessProbe:
           httpGet:
             path: /api/isalive
             port: 5000
-          initialDelaySeconds: 40
-          periodSeconds: 20
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
         resources:
           requests:
-            memory: 128Mi 
-            cpu: 140m 
+            memory: 128Mi
+            cpu: 40m 
           limits:
-            memory: 1024Mi 
-            cpu: 1000m 
+            memory: 500Mi
+            cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
-        - name: RemoteSettingsUrls__0 
-          value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
-        - name: RemoteSettingsReadTimeout
-          value: 00:00:10
+        - name: VAULT_CONFIG
+          value: "http://settings.sirius.svc.cluster.local/sirius/vault-hsm-shared"
+        - name: JAVA_OPTS
+          value: "-Xms64m -Xmx128m"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirius
