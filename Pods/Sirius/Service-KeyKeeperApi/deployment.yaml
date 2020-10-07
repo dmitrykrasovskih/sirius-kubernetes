@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: key-keeper-api
-          image: docker.io/swisschains/sirius-key-keeper-api:1.0.0
+          image: docker.io/swisschains/sirius-key-keeper-api:2.0.0
           imagePullPolicy: Always
           lifecycle:
             postStart:
@@ -40,6 +40,7 @@ spec:
                   - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
           ports:
             - containerPort: 5000
+            - containerPort: 5001            
           readinessProbe:
             httpGet:
               path: /api/isalive
