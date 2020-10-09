@@ -1,5 +1,8 @@
 {
   "Db": {
     "ConnectionString": "${Sirius-Executor-DbConnectionString}"
+  },
+  "Fees": {
+    "LimitMultiplier": 1.0
   }
 }
