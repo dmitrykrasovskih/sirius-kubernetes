@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: bitcoin-cash-private
-        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:1.1.0
+        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:2.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
