@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Shared Vault Worker
+    description: Private Simple Vault Worker
   labels:
-    app: shared-vault-worker
+    app: simple-vault-worker
     environment: Development
     tier: Service
-  name: shared-vault-worker
+  name: simple-vault-worker
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,15 +20,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shared-vault-worker
+      app: simple-vault-worker
   template:
     metadata:
       labels:
-        app: shared-vault-worker
-      name: shared-vault-worker
+        app: simple-vault-worker
+      name: simple-vault-worker
     spec:
       containers:
-      - name: shared-vault-worker
+      - name: simple-vault-worker
         image: docker.io/swisschains/sirius-simple-vault-worker:1.4.0
         imagePullPolicy: Always
         lifecycle:
@@ -65,7 +65,7 @@ spec:
         - name: RemoteSettingsUrls__1 
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/shared-vault"
+          value: "http://settings.sirius.svc.cluster.local/sirius/simple-vault"
       tolerations:
        - effect: NoSchedule
          operator: Exists
