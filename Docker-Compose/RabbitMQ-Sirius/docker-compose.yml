@@ -1,0 +1,16 @@
+version: '2'
+services:
+    rabbitsirius:
+      image: rabbitmq:3.7.3-management
+      container_name: rabbitsirius
+      hostname: localhost
+      ports:
+         - "${RABBIT_SITE_PORT}:15672"
+         - "${RABBIT_PORT}:5672"
+      volumes:
+         - ${DB}:/var/lib/rabbitmq/mnesia/
+      environment:
+         RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+         RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+         RABBITMQ_DEFAULT_VHOST: "/"
+         RABBITMQ_VM_MEMORY_HIGH_WATERMARK: 0.8
