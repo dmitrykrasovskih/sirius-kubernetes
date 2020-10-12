@@ -33,7 +33,7 @@ spec:
         - name: RABBITMQ_DEFAULT_VHOST
           value: /
         - name: RABBITMQ_DEFAULT_USER
-          value: prod.sirius
+          value: user.sirius
         - name: RABBITMQ_VM_MEMORY_HIGH_WATERMARK
           value: "0.8"
         - name: RABBITMQ_DEFAULT_PASS
@@ -78,7 +78,7 @@ spec:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-        agentpool: databases
+        agentpool: agentpool
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
