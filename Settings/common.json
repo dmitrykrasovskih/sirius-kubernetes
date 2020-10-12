@@ -1,4 +1,4 @@
-{ 
+{  
   "SeqUrl": "http://seq.sirius-monitoring.svc.cluster.local",
   "Serilog": {
     "minimumLevel": {
