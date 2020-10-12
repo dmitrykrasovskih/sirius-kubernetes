@@ -65,7 +65,7 @@ spec:
             - name: RemoteSettingsUrls__1
               value: "http://settings.sirius.svc.cluster.local/sirius/common"
             - name: RemoteSettingsUrls__2
-              value: "http://settings.sirius.svc.cluster.local/sirius/key-keeper-api"
+              value: "http://settings.sirius.svc.cluster.local/sirius/key-keeper-api-ENVIRONMENT_MODE"
       tolerations:
         - effect: NoSchedule
           operator: Exists
