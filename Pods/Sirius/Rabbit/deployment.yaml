@@ -72,7 +72,7 @@ spec:
         azureDisk:
           kind: Managed
           diskName: rabbit-sirius
-          diskURI: /subscriptions/0a337fd8-34dd-44a3-be9d-22b6f3798cce/resourceGroups/KubernetesRG/providers/Microsoft.Compute/disks/rabbit-sirius
+          diskURI: /subscriptions/791041c4-d3b5-4916-a464-1e3548275a38/resourceGroups/Kubernetes-Test/providers/Microsoft.Compute/disks/rabbit-sirius
       dnsPolicy: ClusterFirst
       tolerations:
        - effect: NoSchedule
