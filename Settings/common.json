@@ -14,6 +14,7 @@
       }
     }
   },
+  
   "disableConsoleLogOutput": "${Sirius-DisableConsoleLogOutput}",
   "ElasticsearchLogs": {
     "NodeUrls": [ "http://elasticsearch.sirius-monitoring.svc.cluster.local:9200" ],
