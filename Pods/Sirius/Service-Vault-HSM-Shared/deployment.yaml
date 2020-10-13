@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Shared Vault Worker
+    description: HSM Vault Shared
   labels:
-    app: shared-vault-worker
+    app: vault-hsm-shared
     environment: Development
     tier: Service
-  name: shared-vault-worker
+  name: vault-hsm-shared
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shared-vault-worker
+      app: vault-hsm-shared
   template:
     metadata:
       labels:
-        app: shared-vault-worker
-      name: shared-vault-worker
+        app: vault-hsm-shared
+      name: vault-hsm-shared
     spec:
       containers:
-      - name: shared-vault-worker
-        image: docker.io/swisschains/sirius-simple-vault-worker:1.2.0
+      - name: vault-hsm-shared
+        image: docker.io/swisschains/sirius-vault-hsm:1.0.1
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -44,28 +44,32 @@ spec:
           httpGet:
             path: /api/isalive
             port: 5000
-          initialDelaySeconds: 40
-          periodSeconds: 10
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 20
+          successThreshold: 1
+          failureThreshold: 5
         livenessProbe:
           httpGet:
             path: /api/isalive
             port: 5000
-          initialDelaySeconds: 40
-          periodSeconds: 20
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
         resources:
           requests:
-            memory: 64Mi 
+            memory: 128Mi
             cpu: 40m 
           limits:
-            memory: 128Mi 
+            memory: 500Mi
             cpu: 500m 
         env:
-        - name: RemoteSettingsUrls__0 
-          value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/shared-vault"
+        - name: VAULT_CONFIG
+          value: "http://settings.sirius.svc.cluster.local/sirius/vault-hsm-shared"
+        - name: JAVA_OPTS
+          value: "-Xms64m -Xmx128m"
       tolerations:
        - effect: NoSchedule
          operator: Exists

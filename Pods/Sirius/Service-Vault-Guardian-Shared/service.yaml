@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: shared-vault-worker
+    app: vault-guardian-shared
     environment: Development
-  name: shared-vault-worker
+  name: vault-guardian-shared
   namespace: sirius
 spec:
   ports:
@@ -13,6 +13,6 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: shared-vault-worker
+    app: vault-guardian-shared
   sessionAffinity: None
   type: ClusterIP

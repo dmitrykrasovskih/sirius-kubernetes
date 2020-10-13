@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: shared-vault
+    app: simple-vault
     environment: Development
-  name: shared-vault
+  name: simple-vault
   namespace: sirius
 spec:
   ports:
@@ -17,6 +17,6 @@ spec:
     protocol: TCP
     targetPort: 5001
   selector:
-    app: shared-vault
+    app: simple-vault
   sessionAffinity: None
   type: ClusterIP
