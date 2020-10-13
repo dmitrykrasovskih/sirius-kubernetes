@@ -19,5 +19,4 @@
     "NodeUrls": [ "http://elasticsearch.sirius-monitoring.svc.cluster.local:9200" ],
     "IndexPrefixName": "sirius-logs"
   }
-
 }
