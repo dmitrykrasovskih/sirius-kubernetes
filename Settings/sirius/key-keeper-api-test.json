@@ -6,10 +6,6 @@
     "JwtSecret": "${JwtTokenSecret}",
     "Audience": "sirius.swisschain.io"
   },
-  "MyNoSqlServer": {
-    "ReaderServiceUrl": "${Sirius-MyNoSql-Reader-Url}",
-    "WriterServiceUrl": "${Sirius-MyNoSql-Writer-Url}"
-  },
   "FireBaseMessaging": {
     "FireBasePrivateKeyJson": "${Sirius-KeyKeeperApi-FireBasePrivateKeyJson}"
   }   
