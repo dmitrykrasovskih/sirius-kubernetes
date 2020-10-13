@@ -6,8 +6,8 @@ metadata:
     environment: test	
   name: nginx-proxy-a	
   namespace: gateway
-#  annotations:	
-#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"	
+  annotations:	
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"	
 spec:	
   ports:	
   - name: "sirius-api"	
@@ -65,7 +65,7 @@ spec:
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
-  type: ClusterIP	
+  #type: ClusterIP	
   type: LoadBalancer	
-  loadBalancerSourceRanges:	
-  - 52.236.177.182/32
+  #loadBalancerSourceRanges:	
+  #- 52.236.177.182/32
