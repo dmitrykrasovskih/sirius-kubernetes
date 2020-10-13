@@ -1,0 +1,23 @@
+{
+  "instanceName": "Sirius.Guardian.Shared",
+  "db": {
+    "url": "${Sirius-Vault-Guardian-Shared-Db-Url}",
+    "user": "${Sirius-Vault-Guardian-Shared-Db-User}",
+    "password": "${Sirius-Vault-Guardian-Shared-Db-Password}",
+    "schema": "guardian"
+  },
+  "vaultApi": {
+    "host": "vault-api.sirius.svc.cluster.local",
+    "port": 80,
+    "ssl": false,
+    "apiKey": "${Sirius-Vault-Guardian-Shared-VaultApiKey}"
+  },
+  "guardianApi": {
+    "host": "key-keeper-api.sirius.svc.cluster.local",
+    "port": 80,
+    "ssl": false,
+    "apiKey": "${Sirius-Vault-Guardian-Shared-GuardianApiKey}"
+  },
+  "validators": [
+  ]
+}

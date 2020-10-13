@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Brokerage
+    description: Private Simple Vault Worker
   labels:
-    app: brokerage-worker
+    app: simple-vault-worker
     environment: Development
     tier: Service
-  name: brokerage-worker
+  name: simple-vault-worker
   namespace: sirius
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: brokerage-worker
+      app: simple-vault-worker
   template:
     metadata:
       labels:
-        app: brokerage-worker
-      name: brokerage-worker
+        app: simple-vault-worker
+      name: simple-vault-worker
     spec:
       containers:
-      - name: brokerage-worker
-        image: docker.io/swisschains/sirius-brokerage-worker:1.4.1
+      - name: simple-vault-worker
+        image: docker.io/swisschains/sirius-simple-vault-worker:1.4.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -54,24 +54,20 @@ spec:
           periodSeconds: 20
         resources:
           requests:
-            memory: 128Mi 
-            cpu: 140m 
+            memory: 64Mi 
+            cpu: 40m 
           limits:
-            memory: 1024Mi 
-            cpu: 1000m 
+            memory: 128Mi 
+            cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
         - name: RemoteSettingsUrls__0 
           value: "http://settings.sirius.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
-        - name: RemoteSettingsReadTimeout
-          value: 00:00:10
+          value: "http://settings.sirius.svc.cluster.local/sirius/simple-vault"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirius

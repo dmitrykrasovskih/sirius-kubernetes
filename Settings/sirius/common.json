@@ -15,5 +15,9 @@
     "HostUrl": "rabbit.sirius.svc.cluster.local",
     "Username": "${Sirius-Rabbit-User}",
     "Password": "${Sirius-Rabbit-Password}"
+  },
+  "MyNoSqlServer": {
+    "ReaderServiceUrl": "mynosqlserver.sirius.svc.cluster.local:5125",
+    "WriterServiceUrl": "http://mynosqlserver.sirius.svc.cluster.local:5123"
   }
 }

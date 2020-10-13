@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: bitcoin-test
-        image: docker.io/swisschains/sirius-integrations-bitcoin:1.0.4
+        image: docker.io/swisschains/sirius-integrations-bitcoin:2.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
