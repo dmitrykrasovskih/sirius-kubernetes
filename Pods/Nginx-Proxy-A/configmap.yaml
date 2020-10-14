@@ -65,6 +65,11 @@ data:
   #  options ndots:5	
 
   default.stream: |
+    # api-sirius-grpc
+    server {
+      listen 230;
+      proxy_pass api.sirius:5001;
+    }
     # key-keeper-api
     server {
       listen 220;

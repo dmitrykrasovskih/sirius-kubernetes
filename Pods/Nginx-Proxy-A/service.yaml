@@ -62,6 +62,10 @@ spec:
     port: 220
     protocol: TCP
     targetPort: 220
+  - name: "api-sirius-grpc"
+    port: 230
+    protocol: TCP
+    targetPort: 230
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
