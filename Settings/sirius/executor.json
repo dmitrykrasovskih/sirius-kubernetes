@@ -3,6 +3,6 @@
     "ConnectionString": "${Sirius-Executor-DbConnectionString}"
   },
   "Fees": {
-    "LimitMultiplier": 1.0
+    "LimitMultiplier": 1.5
   }
 }
