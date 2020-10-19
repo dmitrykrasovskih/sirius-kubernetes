@@ -6,6 +6,8 @@ metadata:
     environment: Development
   name: api
   namespace: universe
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   ports:
   - name: http
@@ -15,4 +17,4 @@ spec:
   selector:
     app: api
   sessionAffinity: None
-  type: ClusterIP
+  type: LoadBalancer

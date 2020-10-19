@@ -6,6 +6,8 @@ metadata:
     environment: Development
   name: vault-api
   namespace: sirius
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   ports:
     - name: http
@@ -19,4 +21,4 @@ spec:
   selector:
     app: vault-api
   sessionAffinity: None
-  type: ClusterIP
+  type: LoadBalancer
