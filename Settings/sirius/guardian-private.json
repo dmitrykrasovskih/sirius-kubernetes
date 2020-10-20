@@ -1,5 +1,6 @@
 {
   "instanceName": "Sirius.Guardian.Private",
+    "privateKey": "${Sirius-Vault-Guardian-Private-Key}",
   "db": {
     "url": "${Sirius-Vault-Guardian-Db-Url}",
     "user": "${Sirius-Vault-Guardian-Db-User}",
@@ -17,23 +18,5 @@
     "port": 80,
     "ssl": false,
     "apiKey": "${Sirius-Vault-Guardian-GuardianApiKey}"
-  },
-  "validators": [
-    {
-      "name": "Alexander Ushakov iOS",
-      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQCZWrxj+rw+xh4wyW3a3X933vAE6rMfU/mxIcSMfl1fnJ83lB99UA1AvFeCyj4wGCAe8iZp2NS56TowI5TAmqIkVcihbVG8DkXgqamfBWKUMyXmxyTm8TD82C4wmzoax1pFWC6jthCd0XwJMEf5r23GVsNQMcsNfOCWM1VWcEi7kwIBAw==\n-----END PUBLIC KEY-----"
-    },
-    {
-      "name": "Dmitry Makarevich iOS",
-      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQDIxDZoOY5sSBMdeDMGo5NOm6CSC/5p8npXkwLAXm/uMxaGs+J0jbGJ3Ei3Tg7zo0vReI+uYnqKq1rmd9oO91NXR2Wab9mFhUkJXXm9SX6jv6UlumHOKM0JW9SrpFZzxmhmOq2y3J6JQVkJ7EQw0oEJqWbchXg7Wuzj7/gX/CzrQQIBAw==\n-----END PUBLIC KEY-----"
-    },
-    {
-      "name": "Dmitry Makarevich Android",
-      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQCLsLOPKhCpZ339ILqblQI58WqMeWqNYhe/vjKwpKRV45AoBgWSxmsW4yQmBoeun1cQIW+CTzI6CHR1Q/29z1C3ATWLwOtjaAeuJ8Ip6KxQdlYRctO37/oJ0uI5hydj1gzQtjHC9QqBoOQ3RO4qQJwTvkYfskzkRysNI0ch2QXg5QIBAw==\n-----END PUBLIC KEY-----"
-    },
-    {
-      "name": "Alexey Novicikhin Android",
-      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQCY1acCamYq/ggKbj97+CgSvgqanbid/8+pZmGjS1ndL9Td+L0CcaZvU0tkp3/sUdGpWsFhC56qz5zcA+GaLpku6ZlaiH6p+W/gv7+sFAxo/q5Ld4VCoKb1FszaQyUSDEmi/LBOgwhmNzfHL1zoM0CIvEI11IUUPaIOEY66LI1+TwIBAw==\n-----END PUBLIC KEY-----"
-    }
-  ]
+  }
 }

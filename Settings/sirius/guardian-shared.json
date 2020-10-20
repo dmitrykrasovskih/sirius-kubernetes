@@ -1,5 +1,6 @@
 {
   "instanceName": "Sirius.Guardian.Shared",
+  "privateKey": "${Sirius-Vault-Guardian-Shared-Private-Key}",
   "db": {
     "url": "${Sirius-Vault-Guardian-Shared-Db-Url}",
     "user": "${Sirius-Vault-Guardian-Shared-Db-User}",
@@ -17,7 +18,5 @@
     "port": 80,
     "ssl": false,
     "apiKey": "${Sirius-Vault-Guardian-Shared-GuardianApiKey}"
-  },
-  "validators": [
-  ]
+  }
 }

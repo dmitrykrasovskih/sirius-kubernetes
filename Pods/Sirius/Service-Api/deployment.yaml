@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: docker.io/swisschains/sirius-api:2.1.0
+        image: docker.io/swisschains/sirius-api:3.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
