@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: portal
-        image: docker.io/swisschains/universe-portal:1.7.3
+        image: docker.io/swisschains/universe-portal:1.7.4
         imagePullPolicy: Always
         lifecycle:
           postStart:
