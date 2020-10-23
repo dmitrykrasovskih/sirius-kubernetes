@@ -18,7 +18,5 @@
     "port": 80,
     "ssl": false,
     "apiKey": "${Sirius-Vault-Guardian-Shared-GuardianApiKey}"
-  },
-  "validators": [
-  ]
+  }
 }
