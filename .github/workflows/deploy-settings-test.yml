@@ -22,23 +22,23 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         workdir: ./Settings
-        build_number_prefix: ${{ env.build_number_prefix }}
-        build_number: ${{ github.run_number }}
+        #build_number_prefix: ${{ env.build_number_prefix }}
+        #build_number: ${{ github.run_number }}
         # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
 
-    #- name: Restart Settings Server
-    #  uses: swisschain/kube-restart-pods@master
-    #  env:
-    #    KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA_TEST }}
-    #    NAMESPACE: sirius
-    #    POD: settings
-
-    - name: Update Settings Server
-      uses: swisschain/kube-replace-pods@master
+    - name: Restart Settings Server
+      uses: swisschain/kube-restart-pods@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA_TEST }}
-        YAML_FILE: Pods/Sirius/Settings/deployment.yaml
-        GIT_USER: 'Github Swisschain'
-        GIT_EMAIL: github@swisschain.io
-        BUILD_NUMBER_PREFIX: ${{ env.build_number_prefix }}
-        BUILD_NUMBER: ${{ github.run_number }}
+        NAMESPACE: sirius
+        POD: settings
+
+    #- name: Update Settings Server
+    #  uses: swisschain/kube-replace-pods@master
+    #  env:
+    #    KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA_TEST }}
+    #    YAML_FILE: Pods/Sirius/Settings/deployment.yaml
+    #    GIT_USER: 'Github Swisschain'
+    #    GIT_EMAIL: github@swisschain.io
+    #    BUILD_NUMBER_PREFIX: ${{ env.build_number_prefix }}
+    #    BUILD_NUMBER: ${{ github.run_number }}
