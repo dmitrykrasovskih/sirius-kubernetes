@@ -1,0 +1,22 @@
+{
+  "instanceName": "Sirius.Guardian.Private",
+    "privateKey": "${Sirius-Vault-Guardian-Private-Key}",
+  "db": {
+    "url": "${Sirius-Vault-Guardian-Db-Url}",
+    "user": "${Sirius-Vault-Guardian-Db-User}",
+    "password": "${Sirius-Vault-Guardian-Db-Password}",
+    "schema": "guardian"
+  },
+  "vaultApi": {
+    "host": "vault-api.sirius.svc.cluster.local",
+    "port": 80,
+    "ssl": false,
+    "apiKey": "${Sirius-Vault-Guardian-VaultApiKey}"
+  },
+  "guardianApi": {
+    "host": "key-keeper-api.sirius.svc.cluster.local",
+    "port": 80,
+    "ssl": false,
+    "apiKey": "${Sirius-Vault-Guardian-GuardianApiKey}"
+  }
+}

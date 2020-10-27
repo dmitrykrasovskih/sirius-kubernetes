@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: bitcoin-cash
-        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:2.0.0
+        image: docker.io/swisschains/sirius-integrations-bitcoin-cash:3.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -58,7 +58,7 @@ spec:
             memory: 128Mi
             cpu: 100m
           limits:
-            memory: 768Mi
+            memory: 1024Mi
             cpu: 700m
         env:
         - name: RemoteSettingsUrls__0 

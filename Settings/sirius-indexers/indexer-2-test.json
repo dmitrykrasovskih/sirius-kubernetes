@@ -2,11 +2,11 @@
   "Blockchains": {
     "bitcoin": {
       "Db": {
-        "ConnectionString": "${Sirius-Indexer-DbConnectionString-Hetzner-1}"
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
-        "FirstPassIndexersCount": 5,
-        "LastHistoricalBlockNumber": 639700,
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 647034,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }

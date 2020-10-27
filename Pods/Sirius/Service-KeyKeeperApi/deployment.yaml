@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: key-keeper-api
-          image: docker.io/swisschains/sirius-key-keeper-api:2.4.1
+          image: docker.io/swisschains/sirius-key-keeper-api:2.5.0
           imagePullPolicy: Always
           lifecycle:
             postStart:

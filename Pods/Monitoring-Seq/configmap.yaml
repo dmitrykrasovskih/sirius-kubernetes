@@ -63,12 +63,12 @@ data:
 
     server {
       listen 80;
-      proxy_pass seq.monitoring:80;
+      proxy_pass 192.168.30.80:5340;
     }
 
     server {
       listen 12201;
-      proxy_pass seq.monitoring:12201;
+      proxy_pass 192.168.30.80:12201;
     }
 
 kind: ConfigMap

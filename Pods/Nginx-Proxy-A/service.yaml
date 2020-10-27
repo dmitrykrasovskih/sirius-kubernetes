@@ -55,7 +55,19 @@ spec:
     port: 200
     protocol: TCP
     targetPort: 200
+  - name: "bitcoincash-private"
+    port: 210
+    protocol: TCP
+    targetPort: 210
+  - name: "key-keeper-api"
+    port: 220
+    protocol: TCP
+    targetPort: 220
+  - name: "api-sirius-grpc"
+    port: 230
+    protocol: TCP
+    targetPort: 230
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
-  type: LoadBalancer	
+  type: LoadBalancer

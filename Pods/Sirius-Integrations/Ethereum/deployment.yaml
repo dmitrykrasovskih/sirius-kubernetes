@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: ethereum
-        image: docker.io/swisschains/sirius-integrations-ethereum:2.0.0
+        image: docker.io/swisschains/sirius-integrations-ethereum:3.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
