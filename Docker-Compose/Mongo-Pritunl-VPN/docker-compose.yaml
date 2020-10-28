@@ -1,9 +1,0 @@
-version: "2"
-services:
-  mongovpn:
-    container_name: mongovpn
-    image: mongo:3.4.4
-    ports:
-      - ${PORT}:27017
-    volumes:
-      - ${DB}:/data/db
