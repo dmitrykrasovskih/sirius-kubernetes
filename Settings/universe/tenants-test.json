@@ -1,0 +1,18 @@
+{
+  "Db": {
+    "ConnectionString": "${Universe-Tenants-DbConnectionString}"
+  },
+  "Auth": {
+    "JwtSecret": "${JwtTokenSecret}",
+    "Audiences": {
+      "Main": "swisschain.io",
+      "Sirius": "sirius.swisschain.io",
+      "Exchange": "exchange.swisschain.io"
+    },
+    "Ttl": "7.00:00:00"
+  },
+  "Notification": {
+    "EmailVerificationEmailTemplateName": "email-confirmation",
+    "EmailVerificationUrlTemplate": "https://universe-test.swisschain.info/auth/email-confirmation?code={0}"
+  }
+}

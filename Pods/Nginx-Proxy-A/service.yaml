@@ -6,9 +6,10 @@ metadata:
     environment: test	
   name: nginx-proxy-a	
   namespace: gateway
-#  annotations:	
-#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"	
+  annotations:	
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"	
 spec:	
+  loadBalancerIP: 192.168.19.1
   ports:	
   - name: "sirius-api"	
     port: 100	
@@ -54,10 +55,19 @@ spec:
     port: 200
     protocol: TCP
     targetPort: 200
+  - name: "bitcoincash-private"
+    port: 210
+    protocol: TCP
+    targetPort: 210
+  - name: "key-keeper-api"
+    port: 220
+    protocol: TCP
+    targetPort: 220
+  - name: "api-sirius-grpc"
+    port: 230
+    protocol: TCP
+    targetPort: 230
   selector:	
     app: nginx-proxy-a	
   sessionAffinity: None	
-  type: ClusterIP	
-  type: LoadBalancer	
-  loadBalancerSourceRanges:	
-  - 52.236.177.182/32
+  type: LoadBalancer

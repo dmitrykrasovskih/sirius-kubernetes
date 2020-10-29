@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: Integrations
+    description: BitcoinCash Explorer
   labels:
-    app: integrations-worker
-    environment: Development
+    app: bitcoincash-private
+    environment: Test
     tier: Service
-  name: integrations-worker
-  namespace: sirius
+  name: bitcoincash-private
+  namespace: sirius-explorers
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: integrations-worker
+      app: bitcoincash-private
   template:
     metadata:
       labels:
-        app: integrations-worker
-      name: integrations-worker
+        app: bitcoincash-private
+      name: bitcoincash-private
     spec:
       containers:
-      - name: integrations-worker
-        image: docker.io/swisschains/sirius-integrations-worker:1.0.0
+      - name: bitcoincash-private
+        image: oktapodia/btc-rpc-explorer
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -40,16 +40,17 @@ spec:
              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
         ports:
         - containerPort: 5000
+        - containerPort: 5001
         readinessProbe:
           httpGet:
-            path: /api/isalive
-            port: 5000
+            path: /
+            port: 3002
           initialDelaySeconds: 40
           periodSeconds: 10
         livenessProbe:
           httpGet:
-            path: /api/isalive
-            port: 5000
+            path: /
+            port: 3002
           initialDelaySeconds: 40
           periodSeconds: 20
         resources:
@@ -60,16 +61,22 @@ spec:
             memory: 128Mi 
             cpu: 500m 
         env:
-        - name: RemoteSettingsRequired
-          value: "true"
-        - name: RemoteSettingsUrls__0 
-          value: "http://settings.sirius.svc.cluster.local/common"
-        - name: RemoteSettingsUrls__1 
-          value: "http://settings.sirius.svc.cluster.local/sirius/common"
-        - name: RemoteSettingsUrls__2
-          value: "http://settings.sirius.svc.cluster.local/sirius/integrations-ENVIRONMENT_MODE"
+        - name: RPC_USER
+          valueFrom:
+            secretKeyRef:
+              name: bitcoin-cash-private
+              key: BITCOIN_CASH_RPC_USER
+        - name: RPC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: bitcoin-cash-private
+              key: BITCOIN_CASH_RPC_PASS
+        - name: RPC_HOST 
+          value: "bitcoincash-regtest.nodes.swisschain.io"
+        - name: RPC_PORT
+          value: "80"
       tolerations:
        - effect: NoSchedule
          operator: Exists
       nodeSelector:
-          agentpool: sirius
+        agentpool: sirius

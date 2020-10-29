@@ -5,8 +5,8 @@
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
-        "FirstPassIndexersCount": 3,
-        "LastHistoricalBlockNumber": 1120,
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 49925,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -16,7 +16,27 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1781245,
+        "LastHistoricalBlockNumber": 1831819,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "bitcoin-cash-private": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 9983,
+        "DelayOnBlockNotFound": "00:00:01"
+      }
+    },
+    "bitcoin-cash-test": {
+      "Db": {
+        "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
+      },
+      "Indexing": {
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 1411000,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -25,8 +45,8 @@
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
-        "FirstPassIndexersCount": 3,
-        "LastHistoricalBlockNumber": 18730,
+        "FirstPassIndexersCount": 0,
+        "LastHistoricalBlockNumber": 87875,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -36,7 +56,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1566660,
+        "LastHistoricalBlockNumber": 1602065,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -46,7 +66,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 8334800,
+        "LastHistoricalBlockNumber": 8689688,
         "DelayOnBlockNotFound": "00:00:01"
       }
     },
@@ -56,7 +76,7 @@
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 79200,
+        "LastHistoricalBlockNumber": 626133,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }    	

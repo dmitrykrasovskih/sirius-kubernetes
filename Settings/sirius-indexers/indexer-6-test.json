@@ -1,12 +1,12 @@
 {
   "Blockchains": {
-    "litecoin": {
+    "bitcoin-cash": {
       "Db": {
         "ConnectionString": "${Sirius-Indexer-1-DbConnectionString}"
       },
       "Indexing": {
         "FirstPassIndexersCount": 0,
-        "LastHistoricalBlockNumber": 1908125,
+        "LastHistoricalBlockNumber": 653900,
         "DelayOnBlockNotFound": "00:00:01"
       }
     }
