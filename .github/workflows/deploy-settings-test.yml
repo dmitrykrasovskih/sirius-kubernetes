@@ -26,13 +26,6 @@ jobs:
         build_number: ${{ github.run_number }}
         # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
 
-    #- name: Restart Settings Server
-    #  uses: swisschain/kube-restart-pods@master
-    #  env:
-    #    KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA_TEST }}
-    #    NAMESPACE: sirius
-    #    POD: settings
-
     - name: Update Settings Server
       uses: swisschain/kube-replace-pods@master
       env:
