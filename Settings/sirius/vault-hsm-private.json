@@ -18,5 +18,9 @@
     "port": 80,
     "ssl": false,
     "apiKey": "${Sirius-Vault-Hsm-VaultApiKey}"
+  },
+  "tasks": {
+    "transferSigningPeriodInSeconds": 1,
+    "walletGenerationPeriodInSeconds": 1
   }
 }
