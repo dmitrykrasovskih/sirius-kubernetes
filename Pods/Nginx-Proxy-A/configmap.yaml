@@ -85,6 +85,11 @@ data:
       listen 200;
       proxy_pass vault-api.sirius:80;
     }
+    # seq.sirius-monitoring
+    server {
+      listen 190;
+      proxy_pass seq.sirius-monitoring:80;
+    }
     # litecoin-explorer
     server {
       listen 180;
