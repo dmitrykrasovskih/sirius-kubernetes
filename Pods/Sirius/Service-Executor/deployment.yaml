@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: executor
-        image: docker.io/swisschains/sirius-executor:2.2.0
+        image: docker.io/swisschains/sirius-executor:3.0.0
         imagePullPolicy: Always
         lifecycle:
           postStart:

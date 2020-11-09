@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: api-worker
-        image: docker.io/swisschains/sirius-api-worker:3.1.2
+        image: docker.io/swisschains/sirius-api-worker:3.2.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
