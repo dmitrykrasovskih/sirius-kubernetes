@@ -16,23 +16,90 @@
       "DesiredMaxNumberTag": 9223372036854775807
     }
   },
-  "Blockchains": {
-    "bitcoin": { "MinDepositForConsolidation": 0.001 },
-    "bitcoin-test": { "MinDepositForConsolidation": 0.001 },
-    "bitcoin-private": { "MinDepositForConsolidation": 0.01 },
-    
-    "bitcoin-cash": { "MinDepositForConsolidation": 0.0001 },
-    "bitcoin-cash-test": { "MinDepositForConsolidation": 0.00001 },
-    "bitcoin-cash-private": { "MinDepositForConsolidation": 0.01 },
-    
-    "litecoin" : { "MinDepositForConsolidation": 0.04 },
-    "litecoin-test" : { "MinDepositForConsolidation": 0.04 },
-    "litecoin-private": { "MinDepositForConsolidation": 0.02 },
-    
-    "ethereum" : { "MinDepositForConsolidation": 0.01 },
-    "ethereum-ropsten" : { "MinDepositForConsolidation": 0.01 },
-    
-    "stellar" : { "MinDepositForConsolidation": 0 },
-    "stellar-test" : { "MinDepositForConsolidation": 0 }
-  }
+  "AssetThresholds": [
+    {
+      "BlockchainId": "ethereum",
+      "AssetSymbol": "ETH",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "ethereum-ropsten",
+      "AssetSymbol": "ETH",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "ethereum-ropsten",
+      "AssetSymbol": "SCT0",
+      "AssetAddress": "0x244a0071F1a351CCaBE13deE5994550847A7Bf34",
+      "MinDepositThreshold": 10
+    },
+    {
+      "BlockchainId": "bitcoin",
+      "AssetSymbol": "BTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "bitcoin-test",
+      "AssetSymbol": "BTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "bitcoin-private",
+      "AssetSymbol": "BTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "litecoin",
+      "AssetSymbol": "LTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "litecoin-test",
+      "AssetSymbol": "LTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "litecoin-private",
+      "AssetSymbol": "LTC",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "bitcoin-cash",
+      "AssetSymbol": "BCH",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "bitcoin-cash-test",
+      "AssetSymbol": "BCH",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "bitcoin-cash-private",
+      "AssetSymbol": "BCH",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "stellar-test",
+      "AssetSymbol": "XLM",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    },
+    {
+      "BlockchainId": "stellar",
+      "AssetSymbol": "XLM",
+      "AssetAddress": null,
+      "MinDepositThreshold": 0.01
+    }
+  ]
 }
