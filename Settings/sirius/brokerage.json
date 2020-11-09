@@ -16,6 +16,7 @@
       "DesiredMaxNumberTag": 9223372036854775807
     }
   },
+
   "AssetThresholds": [
     {
       "BlockchainId": "ethereum",
