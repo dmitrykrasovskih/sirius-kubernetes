@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+    ibm-odm:
+      image: ibmcom/odm
+      container_name: ibm-odm
+      ports:
+         - "9060:9060"
+         - "9443:9443"
+      volumes:
+         - ${DATA}:/config/dbdata/
+      environment:
+         LICENSE: accept
+         SAMPLE: false
