@@ -10,19 +10,19 @@
     {
       "BlockchainId": "ethereum",
       "AssetSymbol": "USDT",
-      "AssetAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "AssetAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
       "MinDepositThreshold": 1
     },
     {
       "BlockchainId": "ethereum",
       "AssetSymbol": "LINK",
-      "AssetAddress": "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "AssetAddress": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
       "MinDepositThreshold": 0.1
     },
     {
       "BlockchainId": "ethereum",
       "AssetSymbol": "USDC",
-      "AssetAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "AssetAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       "MinDepositThreshold": 1
     },
     {
