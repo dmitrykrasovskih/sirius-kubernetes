@@ -15,24 +15,5 @@
       "DesiredTextTagLength": 28,
       "DesiredMaxNumberTag": 9223372036854775807
     }
-  },
-  "Blockchains": {
-    "bitcoin": { "MinDepositForConsolidation": 0.001 },
-    "bitcoin-test": { "MinDepositForConsolidation": 0.001 },
-    "bitcoin-private": { "MinDepositForConsolidation": 0.01 },
-    
-    "bitcoin-cash": { "MinDepositForConsolidation": 0.0001 },
-    "bitcoin-cash-test": { "MinDepositForConsolidation": 0.00001 },
-    "bitcoin-cash-private": { "MinDepositForConsolidation": 0.01 },
-    
-    "litecoin" : { "MinDepositForConsolidation": 0.04 },
-    "litecoin-test" : { "MinDepositForConsolidation": 0.04 },
-    "litecoin-private": { "MinDepositForConsolidation": 0.02 },
-    
-    "ethereum" : { "MinDepositForConsolidation": 0.01 },
-    "ethereum-ropsten" : { "MinDepositForConsolidation": 0.01 },
-    
-    "stellar" : { "MinDepositForConsolidation": 0 },
-    "stellar-test" : { "MinDepositForConsolidation": 0 }
   }
 }

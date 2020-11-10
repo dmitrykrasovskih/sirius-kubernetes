@@ -18,5 +18,14 @@
     "port": 80,
     "ssl": false,
     "apiKey": "${Sirius-Vault-Guardian-Shared-GuardianApiKey}"
+  },
+  "tasks": {
+    "validationRequestsPeriodInSeconds": 1,
+    "validatorResponsesPeriodInSeconds": 1
+  },
+  "odm": {
+    "enable": ${Sirius-Vault-Guardian-Shared-Odm-Enable},
+    "baseUrl": "${Sirius-Vault-Guardian-Shared-Odm-BaseUrl}",
+    "policySelectorPath": "${Sirius-Vault-Guardian-Shared-Odm-PolicySelectorPath}"
   }
 }

@@ -10,7 +10,7 @@
     "InstanceName": "RateLimits"
   },
   "TenantRateLimiting": {
-    "Streams": 2,
+    "Streams": 4,
     "EndpointWhitelist": [ "get:/api/isalive", "*:/swisschain.sirius.api.monitoring.MonitoringService/IsAlive" ],
     "ClientPolicyPrefix": "tenant-prfx",
     "EnableEndpointRateLimiting": true,

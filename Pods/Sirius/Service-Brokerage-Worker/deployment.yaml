@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: brokerage-worker
-        image: docker.io/swisschains/sirius-brokerage-worker:1.6.0
+        image: docker.io/swisschains/sirius-brokerage-worker:1.8.0
         imagePullPolicy: Always
         lifecycle:
           postStart:
@@ -68,6 +68,8 @@ spec:
           value: "http://settings.sirius.svc.cluster.local/sirius/common"
         - name: RemoteSettingsUrls__2
           value: "http://settings.sirius.svc.cluster.local/sirius/brokerage"
+        - name: RemoteSettingsUrls__3
+          value: "http://settings.sirius.svc.cluster.local/sirius/brokerage-assets-ENVIRONMENT_MODE"
         - name: RemoteSettingsReadTimeout
           value: 00:00:10
       tolerations:
