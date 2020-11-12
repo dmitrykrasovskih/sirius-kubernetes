@@ -83,7 +83,7 @@
       "BlockchainId": "stellar",
       "AssetSymbol": "XLM",
       "AssetAddress": null,
-      "MinDepositThreshold": 0.01
+      "MinDepositThreshold": 0
     }    
   ]
 }
