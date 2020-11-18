@@ -28,5 +28,9 @@
       "ContentType": "application/json",
       "StatusCode": 429
     }
+  },
+  "Webhooks": {
+    "AuthenticationTokenEncryptionKey": "${Sirius-Api-Webhooks-AuthenticationTokenEncryptionKey}",
+    "MaxWebhooksPerTenant": 2
   }
 }
